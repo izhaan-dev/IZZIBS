@@ -1,0 +1,47 @@
+.domains-container {
+  padding: 4rem 10%;
+}
+
+.domains-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.domains-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.domain-item {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.domain-item:hover {
+  border-color: var(--primary-blue);
+  background-color: var(--light-gray);
+  transform: translateX(10px);
+}
+
+.domain-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+  margin-right: 2rem;
+  opacity: 0.5;
+}
+
+.domain-item h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--text-dark);
+}

@@ -1,0 +1,432 @@
+/* --- HERO SECTION --- */
+.hero-section {
+  position: relative;
+  height: 92vh;
+  /* Uses your local background.png */
+  background-image: url('/background.png'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #f3f4f6;
+  font-weight: 400;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--primary-blue);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* --- SERVICES PREVIEW SECTION --- */
+.home-services {
+  padding: 6rem 10%;
+  background-color: var(--white);
+}
+
+.services-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+.service-preview-card {
+  background: var(--white);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  text-decoration: none;
+  /* Initial colors */
+  color: var(--text-dark);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* Dynamic, smooth transition */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-icon-preview,
+.service-preview-card h3,
+.service-preview-card p {
+  transition: color 0.4s ease;
+}
+
+.service-icon-preview {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.service-preview-card h3 {
+  color: var(--primary-blue);
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.service-preview-card p {
+  font-size: 1rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Hover States for Services */
+.service-preview-card:hover {
+  background-color: var(--primary-blue);
+  border-color: transparent;
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px -5px rgba(11, 74, 160, 0.4);
+}
+
+.service-preview-card:hover .service-icon-preview,
+.service-preview-card:hover h3,
+.service-preview-card:hover p {
+  color: var(--white);
+}
+
+/* --- DOMAINS SECTION --- */
+.home-domains {
+  padding: 6rem 10%;
+  background-color: var(--light-gray);
+}
+
+.domains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.domain-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  background: var(--white);
+  transition: transform 0.3s ease;
+}
+
+.domain-card:hover {
+  transform: translateY(-5px);
+}
+
+.domain-img {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
+.domain-info {
+  padding: 2rem;
+  text-align: center;
+  background: var(--white);
+}
+
+.domain-info h3 {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* --- PARTNERS SECTION --- */
+.partners-section {
+  padding: 6rem 10%;
+  background-color: var(--white);
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.partner-card {
+  background: var(--white);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.partner-logo {
+  height: 90px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  opacity: 1; /* Full Color */
+  transition: transform 0.3s ease;
+}
+
+.partner-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-medium);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-blue);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.partner-card:hover .partner-logo {
+  transform: scale(1.05);
+}
+
+.partner-card:hover .partner-name {
+  color: var(--primary-blue);
+}
+
+/* --- PROFILE SECTION --- */
+.profile-section {
+  padding: 8rem 10%;
+  background-color: var(--light-gray);
+}
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.profile-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.profile-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.profile-content h2 {
+  font-size: 2.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-blue);
+  font-weight: 800;
+}
+
+.profile-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: var(--text-medium);
+  font-size: 1.05rem;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(11, 74, 160, 0.4);
+}
+
+.download-btn:hover {
+  background-color: #083675;
+  transform: translateY(-2px);
+}
+
+/* --- GLOBAL CLIENTS SECTION --- */
+.global-clients-section {
+  padding: 6rem 10%;
+  background-color: #081b33; 
+  color: var(--white);
+}
+
+.global-clients-section .section-title {
+  color: var(--white);
+}
+
+.clients-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Map Visual Container */
+.map-visual {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.world-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.6;
+  filter: hue-rotate(200deg) brightness(1.2);
+  transition: transform 10s ease;
+}
+
+.map-visual:hover .world-map-img {
+  transform: scale(1.1);
+}
+
+.map-overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(8, 27, 51, 0.8);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.map-icon {
+  color: #60a5fa;
+  font-size: 1.2rem;
+}
+
+.map-overlay-text span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+/* Regions List Styles */
+.regions-list {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.region-item {
+  border-left: 3px solid #374151; /* Default border color */
+  padding-left: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.region-item:hover {
+  border-left-color: var(--white);
+  transform: translateX(5px);
+}
+
+.region-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* --- COLOR CODED REGIONS --- */
+/* South & East Asia - Blue */
+.color-0 { color: #60a5fa; } 
+
+/* Central & West Asia - Teal */
+.color-1 { color: #2dd4bf; } 
+
+/* Americas - Pink */
+.color-2 { color: #f472b6; } 
+
+/* Europe & Africa - Amber/Yellow */
+.color-3 { color: #fbbf24; } 
+
+/* Australia - Purple */
+.color-4 { color: #a78bfa; } 
+
+.region-item p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin: 0;
+}

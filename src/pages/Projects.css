@@ -1,0 +1,509 @@
+.projects-page {
+  /* Dynamic Gradient Background */
+  background: linear-gradient(-45deg, #f1f5f9, #e2e8f0, #f8fafc, #edf2f7);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- TOP SECTION --- */
+.projects-top-section {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  padding-bottom: 1rem;
+}
+
+.projects-header {
+  padding: 5rem 10% 2.5rem;
+  text-align: center;
+}
+
+.projects-header h1 {
+  font-size: 3.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.projects-header p {
+  color: var(--text-medium);
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- MODERN TABS --- */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  position: sticky;
+  top: 80px;
+  z-index: 90;
+}
+
+.projects-tabs {
+  display: inline-flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  border-radius: 50px;
+  box-shadow: 0 4px 20px -5px rgba(0,0,0,0.1);
+  border: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-medium);
+  cursor: pointer;
+  border-radius: 40px;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: var(--primary-blue);
+  background-color: #f1f5f9;
+}
+
+.tab-btn.active {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  box-shadow: 0 4px 10px rgba(11, 74, 160, 0.2);
+}
+
+/* --- STANDARD VERTICAL TIMELINE --- */
+.timeline-container {
+  position: relative;
+  max-width: 850px;
+  margin: 4rem auto;
+  padding: 0 20px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 53px; 
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 70px; 
+}
+
+/* Timeline Marker */
+.timeline-marker {
+  position: absolute;
+  left: 20px; 
+  top: 30px; 
+  width: 24px;
+  height: 24px;
+  background: var(--white);
+  border: 4px solid var(--primary-blue);
+  border-radius: 50%;
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 4px #e2e8f0;
+  animation: pulse-blue 2s infinite;
+}
+
+@keyframes pulse-blue {
+  0% { box-shadow: 0 0 0 0 rgba(11, 74, 160, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(11, 74, 160, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(11, 74, 160, 0); }
+}
+
+.timeline-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary-blue);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: scale(1.1);
+  border-color: var(--primary-blue);
+  animation: none;
+  box-shadow: 0 0 0 6px rgba(11, 74, 160, 0.2);
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Timeline Card */
+.timeline-content {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease; 
+  cursor: default;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 32px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--white);
+  filter: drop-shadow(-2px 0 1px rgba(0,0,0,0.05));
+  transition: border-right-color 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateX(5px) translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: rgba(11, 74, 160, 0.3);
+}
+
+.project-logo-wrapper {
+  width: 65px;
+  height: 65px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-item:hover .project-logo-wrapper {
+  transform: scale(1.05);
+  border-color: var(--primary-blue);
+}
+
+.project-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.project-info {
+  flex: 1;
+}
+
+.project-year {
+  display: inline-block;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: var(--primary-blue);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.project-client {
+  font-size: 1.35rem;
+  margin: 0.2rem 0 0.6rem;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.project-details {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  flex-wrap: wrap;
+}
+
+.detail-location {
+  font-weight: 600;
+  color: #64748b;
+}
+
+.detail-separator {
+  color: #cbd5e1;
+  font-size: 0.8rem;
+}
+
+.detail-tech {
+  background-color: #f0f9ff;
+  color: var(--primary-blue);
+  font-weight: 600;
+  padding: 0.2rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #bae6fd;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .detail-tech {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border-color: var(--primary-blue);
+}
+
+/* --- SNAKE TIMELINE (Consulting) --- */
+.snake-timeline-container {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 40px;
+  position: relative;
+}
+
+/* Row Styling - TIGHTER SPACING */
+.snake-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  position: relative;
+  height: 160px; /* Reduced height to bring lines closer */
+  padding-top: 20px;
+}
+
+.snake-row.row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* The Horizontal Track Line */
+/* 4 items = centers at 12.5, 37.5, 62.5, 87.5% */
+.snake-track-line {
+  position: absolute;
+  top: 20px; 
+  left: 12.5%; /* Center of first item */
+  right: 12.5%; /* Center of last item */
+  height: 4px;
+  background-color: #cbd5e1;
+  z-index: 1;
+}
+
+/* --- CONNECTORS (Seamless Curves) --- */
+.snake-connector {
+  position: absolute;
+  top: 20px;
+  width: 50px; /* Narrower width for tighter turn */
+  height: 175px; /* UPDATED AS REQUESTED */
+  pointer-events: none;
+}
+
+.connector-line {
+  width: 100%;
+  height: 100%;
+  border: 4px solid #cbd5e1;
+}
+
+/* Curve on the Right */
+.connector-right {
+  right: calc(12.5% - 50px); /* Aligns with track line end */
+}
+
+.connector-right .connector-line {
+  border-left: none;
+  border-radius: 0 25px 25px 0; /* Smooth round turn */
+}
+
+/* Curve on the Left */
+.connector-left {
+  left: calc(12.5% - 50px);
+}
+
+.connector-left .connector-line {
+  border-right: none;
+  border-radius: 25px 0 0 25px;
+}
+
+/* --- SNAKE ITEMS (4 per row) --- */
+.snake-item {
+  position: relative;
+  z-index: 2;
+  width: 25%; /* 4 items per row = 25% width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The Dot */
+.snake-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--white);
+  border: 3px solid var(--primary-blue);
+  border-radius: 50%;
+  position: absolute;
+  top: 0; 
+  transform: translateY(-50%); 
+  z-index: 3;
+  box-shadow: 0 0 0 4px var(--light-gray);
+  animation: pulse-blue 2s infinite;
+}
+
+/* Snake Cards - SMALLER */
+.snake-card {
+  background: var(--white);
+  padding: 0.75rem; /* Reduced padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  width: 85%; /* Slightly narrower */
+  margin-top: 20px; /* Closer to line */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover Effects */
+.snake-item:hover .snake-card {
+  transform: translateY(5px);
+  border-color: var(--primary-blue);
+  box-shadow: 0 10px 20px rgba(11, 74, 160, 0.15);
+}
+
+.snake-item:hover .snake-dot {
+  background: var(--primary-blue);
+  transform: translateY(-50%) scale(1.2);
+}
+
+/* Typography - SMALLER */
+.snake-year {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  background: #eff6ff;
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.3rem;
+}
+
+.snake-client {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  margin: 0.1rem 0;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.snake-location {
+  font-size: 0.75rem;
+  color: var(--text-medium);
+}
+
+/* --- SWIPE ANIMATIONS --- */
+.slide-in-up {
+  animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-in-right {
+  animation: swipeFromRight 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.slide-in-left {
+  animation: swipeFromLeft 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes swipeFromRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes swipeFromLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* --- RESPONSIVE FALLBACK --- */
+@media (max-width: 1024px) {
+  /* Snake Fallback to Vertical List */
+  .snake-row {
+    flex-direction: column !important;
+    height: auto;
+    padding: 0;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .snake-track-line, 
+  .snake-connector, 
+  .snake-dot {
+    display: none; 
+  }
+  
+  .snake-item {
+    width: 100%;
+    align-items: stretch;
+  }
+  
+  .snake-card {
+    width: 100%;
+    margin-top: 0;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .snake-year {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* Vertical Timeline Mobile */
+  .timeline-container {
+    padding: 0 15px;
+  }
+  .timeline-line { left: 20px; }
+  .timeline-marker { left: 10px; }
+  .timeline-item { padding-left: 55px; }
+  .timeline-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .project-logo-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+}

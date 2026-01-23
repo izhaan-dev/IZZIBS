@@ -1,0 +1,58 @@
+/* Import Premium Font (Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-blue: #0b4aa0;
+  --white: #ffffff;
+  --light-gray: #f9fafb; /* Slightly cleaner gray */
+  --text-dark: #111827;   /* softer than pure black */
+  --text-medium: #4b5563; /* premium gray for paragraphs */
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  /* Font smoothing makes text look thinner and crisper on Mac/iOS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--text-dark);
+  letter-spacing: -0.025em; /* Tight tracking for headings looks premium */
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.7; /* More breathing room for text */
+  color: var(--text-medium);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Keep your existing animations */
+.fade-in {
+  animation: fadeIn 1s ease-in forwards;
+  opacity: 0;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}

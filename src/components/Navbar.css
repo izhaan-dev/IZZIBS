@@ -1,0 +1,63 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%; /* Removed vertical padding, relying on fixed height */
+  background: var(--white);
+  /* Stronger, more distinctive shadow for the "pop" effect */
+  box-shadow: 0 4px 20px -5px rgba(0,0,0,0.15); 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 65px; /* Slimmer height (was 80px) */
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 40px; /* Adjusted to fit the slimmer navbar */
+  width: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem; /* Slightly smaller text for cleaner look */
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-blue);
+}
+
+.nav-icons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.icon-link {
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.icon-link:hover {
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+}
