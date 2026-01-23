@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -9,7 +9,6 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
       <div className="app-container">
         <Navbar />
         <div className="content-wrap">
@@ -22,7 +21,6 @@ function App() {
           </Routes>
         </div>
       </div>
-    </Router>
   );
 }
 
