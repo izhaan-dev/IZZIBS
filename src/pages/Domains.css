@@ -1,47 +1,293 @@
-.domains-container {
-  padding: 4rem 10%;
+/* --- PAGE LAYOUT --- */
+.domains-page {
+  background: linear-gradient(-45deg, #f1f5f9, #e2e8f0, #f8fafc, #edf2f7);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+  color: var(--text-dark);
 }
 
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- HEADER --- */
 .domains-header {
-  margin-bottom: 4rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 5rem 10% 3rem;
   text-align: center;
+  position: relative;
+  z-index: 10;
 }
 
-.domains-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 800px;
+.domains-header h1 {
+  font-size: 3.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.domains-header p {
+  font-size: 1.25rem;
+  color: var(--text-medium);
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.domain-item {
+/* --- MAIN LAYOUT (Sidebar + Content) --- */
+.domains-layout {
   display: flex;
-  align-items: center;
-  background: var(--white);
-  padding: 1.5rem 2rem;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  cursor: default;
+  max-width: 1400px; /* Wider to fit sidebar */
+  margin: 4rem auto;
+  padding: 0 40px;
+  gap: 4rem;
+  position: relative;
 }
 
-.domain-item:hover {
-  border-color: var(--primary-blue);
-  background-color: var(--light-gray);
-  transform: translateX(10px);
+/* --- SIDEBAR --- */
+.domains-sidebar {
+  flex: 0 0 300px; /* Fixed width sidebar */
+  position: relative;
+}
+
+.domains-sidebar nav {
+  position: sticky;
+  top: 120px; /* Stick below the main header */
+}
+
+.domains-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 2px solid #e2e8f0;
+}
+
+.domains-sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+/* Sidebar Active/Hover States */
+.sidebar-link:hover {
+  color: var(--primary-blue);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 0 8px 8px 0;
+}
+
+.sidebar-link.active {
+  color: var(--primary-blue);
+  font-weight: 700;
+  background: #fff;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.sidebar-link.active::before {
+  content: '';
+  position: absolute;
+  left: -2px; /* Cover the border */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--primary-blue);
+  border-radius: 2px;
+}
+
+/* --- CONTENT LIST --- */
+.domains-list {
+  flex: 1; /* Takes remaining space */
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  min-width: 0; /* Prevents flex overflow issues */
+}
+
+/* --- DOMAIN CARD --- */
+.domain-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0; /* For animation */
+  scroll-margin-top: 120px; /* Proper spacing when scrolled to */
+}
+
+.domain-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(11, 74, 160, 0.08);
+  border-color: rgba(11, 74, 160, 0.2);
+}
+
+/* Card Header */
+.domain-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 1rem;
 }
 
 .domain-number {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--primary-blue);
-  margin-right: 2rem;
-  opacity: 0.5;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #e2e8f0; 
+  line-height: 1;
 }
 
-.domain-item h2 {
-  font-size: 1.2rem;
+.domain-card h2 {
+  font-size: 2rem;
+  color: var(--primary-blue);
+  font-weight: 700;
   margin: 0;
+}
+
+.domain-description {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+/* --- CONTENT LAYOUT (Grid) --- */
+.domain-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; 
+  gap: 3rem;
+}
+
+.domain-section h3 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #64748b;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* Services List */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 0.8rem;
   color: var(--text-dark);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.service-list li::before {
+  content: "•";
+  color: var(--primary-blue);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Technologies Section */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tech-tag {
+  background-color: #f0f9ff;
+  color: var(--primary-blue);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #bae6fd;
+  transition: all 0.2s ease;
+}
+
+.domain-card:hover .tech-tag {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border-color: var(--primary-blue);
+}
+
+/* --- ANIMATION --- */
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1100px) {
+  .domains-layout {
+    flex-direction: column; /* Stack on smaller screens */
+    padding: 0 20px;
+    gap: 2rem;
+  }
+
+  .domains-sidebar {
+    display: none; /* Hide sidebar on mobile/tablet */
+  }
+
+  .domains-list {
+    width: 100%;
+  }
+
+  .domain-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .domains-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .domain-card {
+    padding: 1.5rem;
+  }
+  
+  .domain-number {
+    font-size: 2.5rem;
+  }
+
+  .domain-card h2 {
+    font-size: 1.5rem;
+  }
 }

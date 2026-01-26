@@ -3,12 +3,14 @@ import { FaPhoneAlt, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
+  // Dynamic path helper for the logo
+  const logoPath = `${import.meta.env.BASE_URL}logo.png`;
+
   return (
     <nav className="navbar">
       <div className="nav-logo">
         <Link to="/">
-          <img src="/logo.png" alt="IZZI BS" className="logo-img" />
-          {/* Fallback text if image doesn't load immediately */}
+          <img src={logoPath} alt="IZZI BS" className="logo-img" />
           <span className="logo-text" style={{display: 'none'}}>IZZI BS</span> 
         </Link>
       </div>

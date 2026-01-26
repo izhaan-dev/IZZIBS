@@ -1,0 +1,140 @@
+.footer {
+  background-color: var(--white);
+  padding: 3rem 5%;
+  border-top: 1px solid #e5e7eb;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align vertically in the middle */
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- LEFT SECTION --- */
+.footer-section.left {
+  flex: 1;
+  min-width: 280px;
+}
+
+.address-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #374151;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.footer-icon {
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.contact-row a {
+  text-decoration: none;
+  color: #374151;
+  transition: color 0.2s ease;
+}
+
+.contact-row a:hover {
+  color: var(--primary-blue);
+}
+
+/* --- CENTER SECTION --- */
+.footer-section.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+}
+
+.footer-logo {
+  height: 80px; /* Adjust based on your actual logo file aspect ratio */
+  width: auto;
+  opacity: 0.9;
+}
+
+/* --- RIGHT SECTION --- */
+.footer-section.right {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Right align content */
+  text-align: right;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-link {
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--primary-blue);
+}
+
+.footer-nav {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #374151;
+  margin: 0 5px;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--primary-blue);
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.3rem;
+}
+
+.credits {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .footer-section.right {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .contact-row {
+    justify-content: center;
+  }
+}

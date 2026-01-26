@@ -1,59 +1,94 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaDownload, FaGlobeAmericas, FaLightbulb, FaBullhorn, FaPencilAlt, FaComments } from 'react-icons/fa';
 import './Home.css';
 import InteractiveMap from '../components/InteractiveMap';
 
+// --- HELPER FOR GITHUB PAGES ASSETS ---
+const getAssetPath = (path) => {
+  // Ensures the path works whether on localhost or /IZZIBS/
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
+
 // Data for Domains
 const domainsData = [
-  { id: 1, title: "Planning & Optimization", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" },
-  { id: 2, title: "Scheduling & Blending", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80" },
-  { id: 3, title: "Process Modelling", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=500&q=80" },
-  { id: 4, title: "Process Optimization", img: "https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?auto=format&fit=crop&w=500&q=80" },
-  { id: 5, title: "Manufacturing Info Systems", img: "https://images.pexels.com/photos/9242913/pexels-photo-9242913.jpeg" },
-  { id: 6, title: "Digitalization", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80" }
+  { 
+    id: 1, 
+    title: "Planning & Optimization", 
+    targetId: "planning", 
+    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" 
+  },
+  { 
+    id: 2, 
+    title: "Scheduling & Blending", 
+    targetId: "scheduling", 
+    img: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80" 
+  },
+  { 
+    id: 3, 
+    title: "Process Modelling", 
+    targetId: "process", 
+    img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" 
+  },
+  { 
+    id: 4, 
+    title: "Process Optimization", 
+    targetId: "consulting",
+    img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80" 
+  },
+  { 
+    id: 5, 
+    title: "Manufacturing Info Systems", 
+    targetId: "mis", 
+    img: "https://izzibs.com/imgs/domain-h_img4.jpg" 
+  },
+  { 
+    id: 6, 
+    title: "Digitalization", 
+    targetId: "digital", 
+    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" 
+  }
 ];
 
-// Data for Partners (Logos)
+// Partners Data (Using strictly filenames now)
 const partnersList = [
-  { name: "AVEVA", logo: "/aveva.png" },
-  { name: "McKinsey & Company", logo: "/mckinsey.png" },
-  { name: "Wipro", logo: "/wipro.png" },
-  { name: "Shell", logo: "/shell.png" },
-  { name: "Petrogenium", logo: "/petrogenium.png" },
-  { name: "Accenture", logo: "/accenture.png" },
-  { name: "Tech Mahindra", logo: "/techmahindra.png" },
-  { name: "Jaaji Technologies", logo: "/jaajitech.png" }
+  { name: "AVEVA", logo: "aveva.png" },
+  { name: "McKinsey & Company", logo: "mckinsey.png" },
+  { name: "Wipro", logo: "wipro.png" },
+  { name: "Shell", logo: "shell.png" },
+  { name: "Petrogenium", logo: "petrogenium.png" },
+  { name: "Accenture", logo: "accenture.png" },
+  { name: "Tech Mahindra", logo: "techmahindra.png" },
+  { name: "Jaaji Technologies", logo: "jaajitech.png" }
 ];
 
-// Data for Services Preview
 const servicesPreview = [
   {
     id: "implementation",
     icon: <FaLightbulb />,
     title: "Implementation",
-    desc: "We provide operational technology implementation services to build models for clients with industry best standards. We also provide integration services for seamless data flow across various business applications."
+    desc: "We provide operational technology implementation services to build models for clients with industry best standards."
   },
   {
     id: "consulting",
     icon: <FaBullhorn />,
     title: "Consulting",
-    desc: "We provide technical and project management consulting services to our clients to elevate their business processes and model utilizations to align with industry best practices."
+    desc: "We provide technical and project management consulting services to elevate business processes and model utilizations."
   },
   {
     id: "training",
     icon: <FaPencilAlt />,
     title: "Training",
-    desc: "We provide standard and customized training programs for business processes and applications, in line with client requirements."
+    desc: "We provide standard and customized training programs for business processes and applications."
   },
   {
     id: "support",
     icon: <FaComments />,
     title: "Support",
-    desc: "We provide continuous and need based support services to our clients, to ensure maximum benefits are achieved by effective utilizations of existing systems."
+    desc: "We provide continuous and need based support services to ensure maximum benefits are achieved."
   }
 ];
 
-// Data for Global Clients Regions
 const globalRegions = [
   { region: "South & East Asia", countries: "India, South Korea, Thailand, Vietnam, Malaysia, Indonesia, Philippines, China" },
   { region: "Central & West Asia", countries: "Saudi Arabia, UAE, Oman, Qatar, Azerbaijan" },
@@ -63,23 +98,29 @@ const globalRegions = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleDomainClick = (targetId) => {
+    navigate(`/domains#${targetId}`);
+  };
+
   return (
     <div className="home-container">
-      {/* 1. HERO SECTION */}
-      <section className="hero-section fade-in">
+      {/* 1. HERO SECTION (Fixed background image path) */}
+      <section 
+        className="hero-section fade-in"
+        style={{ backgroundImage: `url(${getAssetPath('background.png')})` }}
+      >
         <div className="hero-overlay"></div>
         <div className="hero-content slide-up">
           <h1>IZZI Business Services</h1>
           <p>
             IZZI Business Services (IZZIBS) has been a trusted and reputable provider of services since 2016, 
-            consistently delivering exceptional and expert services to our clients and partners. We specialize 
-            in the energy sector, including refineries and petrochemicals, as well as the chemical and other 
-            manufacturing industries.
+            specializing in the energy sector, refineries, petrochemicals, and manufacturing industries.
           </p>
           <p>
-            We are actively serving our clients and partners internationally from our office in Jamnagar, Gujarat. 
-            Our organization is committed to ambitious strategies designed to broaden our international footprint 
-            by assembling a more extensive and powerful team.
+            Operating internationally from Jamnagar, Gujarat, we are committed to ambitious strategies 
+            to broaden our footprint with an expert team.
           </p>
           <Link to="/services" className="hero-btn">View Services &rarr;</Link>
         </div>
@@ -90,7 +131,6 @@ const Home = () => {
         <h2 className="section-title">Services</h2>
         <div className="services-preview-grid">
           {servicesPreview.map((service, index) => (
-            // Update the Link `to` prop here:
             <Link to={`/services#${service.id}`} key={index} className="service-preview-card">
               <div className="service-icon-preview">{service.icon}</div>
               <h3>{service.title}</h3>
@@ -100,32 +140,39 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 3. DOMAINS SECTION */}
+      {/* 3. DOMAINS SECTION (3x2 Grid + Pop Up + Routing) */}
       <section className="home-domains">
         <h2 className="section-title">Domains</h2>
-        <div className="domains-grid">
+        <div className="home-domains-grid">
           {domainsData.map((domain) => (
-            <div key={domain.id} className="domain-card">
-              <div className="domain-img" style={{backgroundImage: `url(${domain.img})`}}></div>
-              <div className="domain-info">
+            <div 
+              key={domain.id} 
+              className="home-domain-card" 
+              onClick={() => handleDomainClick(domain.targetId)}
+            >
+              <div className="home-card-image-wrapper">
+                <img src={domain.img} alt={domain.title} />
+              </div>
+              <div className="home-card-content">
                 <h3>{domain.title}</h3>
+                <span className="arrow-indicator">→</span>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 4. PARTNERS SECTION */}
+      {/* 4. PARTNERS SECTION (Fixed logo paths) */}
       <section className="partners-section">
         <h2 className="section-title">Our Project Partners</h2>
         <div className="partners-grid">
           {partnersList.map((partner, index) => (
             <div key={index} className="partner-card">
               <img 
-                src={partner.logo} 
+                src={getAssetPath(partner.logo)} 
                 alt={`${partner.name} logo`} 
                 className="partner-logo" 
-                onError={(e) => {e.target.style.display='none'}} // Hides broken images if file name is wrong
+                onError={(e) => {e.target.style.display='none'}} 
               />
               <span className="partner-name">{partner.name}</span>
             </div>
@@ -133,7 +180,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 5. COMPANY PROFILE SECTION */}
+      {/* 5. COMPANY PROFILE SECTION (Fixed PDF download path) */}
       <section className="profile-section">
         <div className="profile-wrapper">
           <div className="profile-image">
@@ -143,14 +190,18 @@ const Home = () => {
             <h2>Company Profile</h2>
             <p>
               IZZI Business Services is a trusted provider of consulting, implementation, training, and support services, 
-              led by a team of certified professionals with extensive industry experience. We are committed to delivering 
-              best-in-class solutions that empower our clients to achieve lasting success.
+              led by a team of certified professionals with extensive industry experience.
             </p>
             <p>
-              Specializing in areas such as planning & optimization, scheduling & blending, and digital transformation, 
+              Specializing in planning, optimization, scheduling, blending, and digital transformation, 
               we offer tailored services to meet the unique needs of each client.
             </p>
-            <a href="/izzibs_company_profile.pdf" download className="download-btn">
+            {/* FIXED DOWNLOAD BUTTON */}
+            <a 
+              href={getAssetPath("izzibs_company_profile.pdf")} 
+              download="izzibs_company_profile.pdf"
+              className="download-btn"
+            >
               Download Company Profile <FaDownload style={{marginLeft: '10px'}}/>
             </a>
           </div>
@@ -161,12 +212,8 @@ const Home = () => {
       <section className="global-clients-section">
         <h2 className="section-title">Our Global Clients</h2>
         <div className="clients-container">
-          
-          {/* UPDATED MAP VISUAL */}
           <div className="map-visual">
             <InteractiveMap />
-            
-            {/* Overlay Text */}
             <div className="map-overlay-text">
               <FaGlobeAmericas className="map-icon" />
               <span>Active Across 5 Continents</span>

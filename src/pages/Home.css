@@ -2,8 +2,7 @@
 .hero-section {
   position: relative;
   height: 92vh;
-  /* Uses your local background.png */
-  background-image: url('/background.png'); 
+  /* Background image is now handled inline in JSX to support deployment paths */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -12,6 +11,7 @@
   color: var(--white);
   text-align: center;
   padding: 0 20px;
+  background-color: #0b4aa0; /* Fallback color */
 }
 
 .hero-overlay {
@@ -93,7 +93,6 @@
   border-radius: 16px;
   text-align: center;
   text-decoration: none;
-  /* Initial colors */
   color: var(--text-dark);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   border: 1px solid #f3f4f6;
@@ -102,7 +101,6 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  /* Dynamic, smooth transition */
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -132,7 +130,6 @@
   margin: 0;
 }
 
-/* Hover States for Services */
 .service-preview-card:hover {
   background-color: var(--primary-blue);
   border-color: transparent;
@@ -146,47 +143,104 @@
   color: var(--white);
 }
 
-/* --- DOMAINS SECTION --- */
+/* --- HOME DOMAINS SECTION (3x2 Grid + Pop Up) --- */
 .home-domains {
   padding: 6rem 10%;
-  background-color: var(--light-gray);
+  background-color: #f1f5f9;
 }
 
-.domains-grid {
+.home-domains-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr); /* 3 Columns Fixed */
+  gap: 2.5rem;
 }
 
-.domain-card {
-  border-radius: 16px;
+/* Responsive */
+@media (max-width: 1024px) {
+  .home-domains-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .home-domains-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-domain-card {
+  background: var(--white);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  background: var(--white);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 1; 
 }
 
-.domain-card:hover {
-  transform: translateY(-5px);
+/* POP UP EFFECT */
+.home-domain-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px -5px rgba(11, 74, 160, 0.15);
+  border-color: var(--primary-blue);
 }
 
-.domain-img {
-  height: 220px;
-  background-size: cover;
-  background-position: center;
+.home-card-image-wrapper {
+  width: 100%;
+  height: 220px; 
+  background-color: #cbd5e1; 
+  overflow: hidden;
 }
 
-.domain-info {
-  padding: 2rem;
-  text-align: center;
-  background: var(--white);
+.home-card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
 
-.domain-info h3 {
-  font-size: 1.25rem;
-  color: var(--text-dark);
+.home-domain-card:hover .home-card-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.home-card-content {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  background: white;
+}
+
+.home-card-content h3 {
   margin: 0;
-  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.home-domain-card:hover h3 {
+  color: var(--primary-blue);
+}
+
+.arrow-indicator {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Arrow slides in on hover */
+.home-domain-card:hover .arrow-indicator {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* --- PARTNERS SECTION --- */
@@ -221,7 +275,6 @@
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  opacity: 1; /* Full Color */
   transition: transform 0.3s ease;
 }
 
@@ -327,7 +380,6 @@
   align-items: center;
 }
 
-/* Map Visual Container */
 .map-visual {
   flex: 1;
   min-width: 300px;
@@ -340,19 +392,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.world-map-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  opacity: 0.6;
-  filter: hue-rotate(200deg) brightness(1.2);
-  transition: transform 10s ease;
-}
-
-.map-visual:hover .world-map-img {
-  transform: scale(1.1);
 }
 
 .map-overlay-text {
@@ -381,7 +420,6 @@
   color: #e2e8f0;
 }
 
-/* Regions List Styles */
 .regions-list {
   flex: 1;
   min-width: 300px;
@@ -391,7 +429,7 @@
 }
 
 .region-item {
-  border-left: 3px solid #374151; /* Default border color */
+  border-left: 3px solid #374151;
   padding-left: 1.5rem;
   transition: all 0.3s ease;
 }
@@ -409,20 +447,10 @@
   font-weight: 600;
 }
 
-/* --- COLOR CODED REGIONS --- */
-/* South & East Asia - Blue */
 .color-0 { color: #60a5fa; } 
-
-/* Central & West Asia - Teal */
 .color-1 { color: #2dd4bf; } 
-
-/* Americas - Pink */
 .color-2 { color: #f472b6; } 
-
-/* Europe & Africa - Amber/Yellow */
 .color-3 { color: #fbbf24; } 
-
-/* Australia - Purple */
 .color-4 { color: #a78bfa; } 
 
 .region-item p {
