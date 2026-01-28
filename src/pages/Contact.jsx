@@ -48,7 +48,6 @@ const Contact = () => {
               <div className="detail-text">
                 <h3>Email Us</h3>
                 <p><a href="mailto:sales@izzibs.com">sales@izzibs.com</a></p>
-                <p><a href="mailto:info@izzibs.com">info@izzibs.com</a></p>
               </div>
             </div>
           </div>

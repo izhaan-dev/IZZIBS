@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaPhoneAlt, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
-  // Dynamic path helper for the logo
+  // Dynamic logo path helper
   const logoPath = `${import.meta.env.BASE_URL}logo.png`;
 
   return (
@@ -16,17 +16,18 @@ const Navbar = () => {
       </div>
       
       <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/services">Services</Link></li>
-        <li><Link to="/domains">Domains</Link></li>
-        <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/contact">Contact Us</Link></li>
+        {/* NavLink automatically handles the "active" state */}
+        <li><NavLink to="/" end>Home</NavLink></li>
+        <li><NavLink to="/services">Services</NavLink></li>
+        <li><NavLink to="/domains">Domains</NavLink></li>
+        <li><NavLink to="/projects">Projects</NavLink></li>
+        <li><NavLink to="/contact">Contact Us</NavLink></li>
       </ul>
 
       <div className="nav-icons">
-        <a href="tel:+911234567890" className="icon-link"><FaPhoneAlt /></a>
-        <a href="mailto:info@izzibs.com" className="icon-link"><FaEnvelope /></a>
-        <a href="https://wa.me/911234567890" className="icon-link"><FaWhatsapp /></a>
+        <a href="tel:+917383785636" className="icon-link"><FaPhoneAlt /></a>
+        <a href="mailto:sales@izzibs.com" className="icon-link"><FaEnvelope /></a>
+        <a href="https://wa.me/917383785636" className="icon-link"><FaWhatsapp /></a>
       </div>
     </nav>
   );

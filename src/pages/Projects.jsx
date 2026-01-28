@@ -3,9 +3,18 @@ import './Projects.css';
 
 // --- HELPER FOR GITHUB PAGES ASSETS ---
 const getAssetPath = (path) => {
-  // Removes leading slash if present, then prepends the environment Base URL
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
   return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
+
+// --- HELPER FOR TECH COLORS ---
+const getTechClass = (tech) => {
+  if (!tech) return '';
+  const lowerTech = tech.toLowerCase();
+  if (lowerTech.includes('aveva')) return 'tech-aveva';
+  if (lowerTech.includes('aspen')) return 'tech-aspentech';
+  if (lowerTech.includes('excel')) return 'tech-excel';
+  return ''; 
 };
 
 // --- PROJECT DATA ---
@@ -17,33 +26,32 @@ const projectsData = {
     { year: "2023-24", client: "MPC", location: "US", tech: "AspenTech", logo: "/logos/mpc.png" },
     { year: "2023", client: "AVEVA Client", location: "Far East", tech: "AVEVA", logo: "/logos/aveva.png" },
     { year: "2023", client: "AVEVA Client", location: "Middle East", tech: "AVEVA", logo: "/logos/aveva.png" },
-    { year: "2022-23", client: "IOCL", location: "India", tech: "AVEVA", logo: "/logos/iocl.jpg" }, // Note: changed extension to match your screenshot if needed
+    { year: "2022-23", client: "IOCL", location: "India", tech: "AVEVA", logo: "/logos/iocl.jpg" },
     { year: "2020-21", client: "Bangchak", location: "Thailand", tech: "AVEVA", logo: "/logos/bangchak.png" },
     { year: "2019-20", client: "Astron Energy", location: "South Africa", tech: "AVEVA", logo: "/logos/astron.png" },
   ],
   Scheduling: [
     { year: "2025", client: "Shell", location: "Qatar", tech: "AspenTech", logo: "/logos/shell.png" },
-    { year: "2025", client: "SATORP", location: "Saudi Arabia", tech: "AspenTech", logo: "/logos/satorp.png" }, // Ensure satorp.png exists
+    { year: "2025", client: "SATORP", location: "Saudi Arabia", tech: "AspenTech", logo: "/logos/satorp.png" },
     { year: "2024-25", client: "Shell", location: "Rheinland", tech: "AspenTech", logo: "/logos/shell.png" },
     { year: "2022-23", client: "MPC", location: "US", tech: "AspenTech", logo: "/logos/mpc.png" },
-    { year: "2022-23", client: "OQ", location: "Oman", tech: "AspenTech", logo: "/logos/oq.png" }, // Ensure oq.png exists
-    { year: "2022-23", client: "Dangote", location: "Nigeria", tech: "MS Excel", logo: "/logos/dangote.png" }, // Ensure dangote.png exists
+    { year: "2022-23", client: "OQ", location: "Oman", tech: "AspenTech", logo: "/logos/oq.png" },
+    { year: "2022-23", client: "Dangote", location: "Nigeria", tech: "MS Excel", logo: "/logos/dangote.png" },
     { year: "2021-23", client: "IOCL", location: "India", tech: "AVEVA", logo: "/logos/iocl.jpg" },
-    { year: "2021-22", client: "ZPC", location: "China", tech: "AspenTech", logo: "/logos/zpc.png" }, // Ensure zpc.png exists
+    { year: "2021-22", client: "ZPC", location: "China", tech: "AspenTech", logo: "/logos/zpc.png" },
     { year: "2020-21", client: "Bangchak", location: "Thailand", tech: "AVEVA", logo: "/logos/bangchak.png" },
-    { year: "2018", client: "Yasref", location: "Saudi Arabia", tech: "AspenTech", logo: "/logos/yasref.png" }, // Ensure yasref.png exists
-    { year: "2018", client: "Petronas", location: "Malaysia", tech: "AspenTech", logo: "/logos/petronas.png" }, // Ensure petronas.png exists
-    { year: "2017", client: "Petro Rabigh", location: "KSA", tech: "AspenTech", logo: "/logos/petrorabigh.png" }, // Ensure petrorabigh.png exists
+    { year: "2018", client: "Yasref", location: "Saudi Arabia", tech: "AspenTech", logo: "/logos/yasref.png" },
+    { year: "2018", client: "Petronas", location: "Malaysia", tech: "AspenTech", logo: "/logos/petronas.png" },
+    { year: "2017", client: "Petro Rabigh", location: "KSA", tech: "AspenTech", logo: "/logos/petrorabigh.png" },
     { year: "2016-18", client: "ADNOC", location: "UAE", tech: "AspenTech", logo: "/logos/adnoc.png" },
   ],
   Digitalization: [
-    { year: "2018-19", client: "Nayara Energy", location: "India", tech: "Digital Transformation", logo: "/logos/nayara.png" }, // Ensure nayara.png exists
-    // { year: "2023", client: "Global PetroChem", location: "Europe", tech: "Digital Twin", logo: "/logos/placeholder.png" } 
+    { year: "2018-19", client: "Nayara Energy", location: "India", tech: "Digital Transformation", logo: "/logos/nayara.png" },
   ],
   "Partner Services": [
     { year: "2018", client: "Nayara Energy", location: "Jamnagar", tech: "Partner Service", logo: "/logos/nayara.png" },
-    { year: "2018", client: "Reliance Industries Ltd", location: "Patalganga", tech: "Partner Service", logo: "/logos/ril.png" }, // Ensure ril.png exists
-    { year: "2017", client: "HMEL", location: "Bhatinda", tech: "Partner Service", logo: "/logos/hmel.png" } // Ensure hmel.png exists
+    { year: "2018", client: "Reliance Industries Ltd", location: "Patalganga", tech: "Partner Service", logo: "/logos/ril.png" },
+    { year: "2017", client: "HMEL", location: "Bhatinda", tech: "Partner Service", logo: "/logos/hmel.png" }
   ],
   "Consulting Assignments": [
     { year: "2025", client: "Oil Major", location: "Western Asia" },
@@ -72,7 +80,6 @@ const projectsData = {
   ]
 };
 
-// Helper to chunk data into rows (Updated to 4 items per row)
 const chunkArray = (arr, size) => {
   const chunked = [];
   for (let i = 0; i < arr.length; i += size) {
@@ -86,7 +93,6 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState("Planning");
   const [animationClass, setAnimationClass] = useState("slide-in-up");
 
-  // Chunk consulting data into rows of 4
   const consultingRows = useMemo(() => {
     return chunkArray(projectsData["Consulting Assignments"], 4);
   }, []);
@@ -133,31 +139,21 @@ const Projects = () => {
                 key={rowIndex} 
                 className={`snake-row ${rowIndex % 2 !== 0 ? 'row-reverse' : ''}`}
               >
-                {/* Horizontal Line Background */}
                 <div className="snake-track-line"></div>
-
-                {/* Connector Curve (Only for rows before the last one) */}
                 {rowIndex < consultingRows.length - 1 && (
                   <div className={`snake-connector ${rowIndex % 2 === 0 ? 'connector-right' : 'connector-left'}`}>
                     <div className="connector-line"></div>
                   </div>
                 )}
-
                 {row.map((project, index) => (
                   <div key={index} className="snake-item">
-                    
-                    {/* The Dot on the Line */}
-                    <div className="snake-dot">
-                      <div className="snake-dot-inner"></div>
-                    </div>
-
-                    {/* The Content Card (Always below) */}
-                    <div className="snake-card">
+                    <div className="snake-dot"><div className="snake-dot-inner"></div></div>
+                    {/* Added tech class to snake-card */}
+                    <div className={`snake-card ${getTechClass(project.tech)}`}>
                       <div className="snake-year">{project.year}</div>
                       <h4 className="snake-client">{project.client}</h4>
                       <p className="snake-location">{project.location}</p>
                     </div>
-
                   </div>
                 ))}
               </div>
@@ -172,9 +168,9 @@ const Projects = () => {
                 <div className="timeline-marker">
                   <div className="timeline-dot"></div>
                 </div>
-                <div className="timeline-content">
+                {/* Added tech class to timeline-content */}
+                <div className={`timeline-content ${getTechClass(project.tech)}`}>
                   <div className="project-logo-wrapper">
-                    {/* FIXED: Using getAssetPath helper here */}
                     <img 
                       src={getAssetPath(project.logo)} 
                       alt={`${project.client} logo`} 
@@ -191,7 +187,9 @@ const Projects = () => {
                     <div className="project-details">
                       <span className="detail-location">{project.location}</span>
                       <span className="detail-separator">•</span>
-                      <span className="detail-tech">{project.tech}</span>
+                      <span className={`detail-tech ${getTechClass(project.tech)}`}>
+                        {project.tech}
+                      </span>
                     </div>
                   </div>
                 </div>

@@ -41,7 +41,9 @@ const Footer = () => {
         <div className="footer-section right">
           <div className="social-icons">
             {/* Facebook (Placeholder link) */}
-            <a href="#" className="social-link"><FaFacebookF /></a>
+            <a 
+              href="https://www.facebook.com/izzibusinessservices/"
+              className="social-link"><FaFacebookF /></a>
             {/* LinkedIn (Actual link) */}
             <a 
               href="https://www.linkedin.com/company/izzi-business-services" 
@@ -60,11 +62,11 @@ const Footer = () => {
             <Link to="/contact">Contact Us</Link>
           </div>
 
-          <p className="copyright">
+          {/* <p className="copyright">
             © Izzi Business Services All Right Reserved.
-          </p>
+          </p> */}
           <p className="credits">
-            Crafted By: Topa Solutions
+            Crafted By: Izhaan Tatariya
           </p>
         </div>
 

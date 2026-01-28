@@ -76,6 +76,21 @@ const domainsData = [
     ]
   },
   {
+    id: "consulting",
+    title: "Consulting Services",
+    description: "Expert advisory to unlock hidden value and operational efficiency.",
+    services: [
+      "Conduct profitability studies to enhance process efficiency",
+      "Optimize process unit operations and key parameters",
+      "Upgrade low-value streams to higher-value products",
+      "Explore & evaluate new intermediate processing feasibility",
+      "Assess and evaluate feasibility of new crude processing",
+      "Minimize Quality Giveaway",
+      "Identify Bottlenecks"
+    ],
+    technologies: [] 
+  },
+  {
     id: "mis",
     title: "Manufacturing Information Services (MIS)",
     description: "Bridging the gap between plant data and business decision-making.",
@@ -116,21 +131,7 @@ const domainsData = [
       "JaajiTech insis Suite"
     ]
   },
-  {
-    id: "consulting",
-    title: "Consulting Services",
-    description: "Expert advisory to unlock hidden value and operational efficiency.",
-    services: [
-      "Conduct profitability studies to enhance process efficiency",
-      "Optimize process unit operations and key parameters",
-      "Upgrade low-value streams to higher-value products",
-      "Explore & evaluate new intermediate processing feasibility",
-      "Assess and evaluate feasibility of new crude processing",
-      "Minimize Quality Giveaway",
-      "Identify Bottlenecks"
-    ],
-    technologies: [] 
-  }
+
 ];
 
 const Domains = () => {

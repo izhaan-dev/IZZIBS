@@ -2,14 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5%; /* Removed vertical padding, relying on fixed height */
+  padding: 0 5%;
   background: var(--white);
-  /* Stronger, more distinctive shadow for the "pop" effect */
   box-shadow: 0 4px 20px -5px rgba(0,0,0,0.15); 
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 65px; /* Slimmer height (was 80px) */
+  height: 65px;
 }
 
 .nav-logo a {
@@ -19,7 +18,7 @@
 }
 
 .logo-img {
-  height: 40px; /* Adjusted to fit the slimmer navbar */
+  height: 40px;
   width: auto;
 }
 
@@ -35,12 +34,37 @@
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 600;
-  font-size: 0.95rem; /* Slightly smaller text for cleaner look */
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative; /* Needed for the dot */
 }
 
 .nav-links a:hover {
   color: var(--primary-blue);
+}
+
+/* --- ACTIVE STATE (Minimalist) --- */
+.nav-links a.active {
+  color: var(--primary-blue);
+}
+
+/* The Minimalist Dot */
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; /* Position below text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background-color: var(--primary-blue);
+  border-radius: 50%;
+  animation: popIn 0.3s ease forwards;
+}
+
+@keyframes popIn {
+  from { transform: translateX(-50%) scale(0); }
+  to { transform: translateX(-50%) scale(1); }
 }
 
 .nav-icons {
