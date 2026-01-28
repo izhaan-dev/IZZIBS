@@ -1,6 +1,13 @@
 import { useState, useMemo } from 'react';
 import './Projects.css';
 
+// --- HELPER FOR GITHUB PAGES ASSETS ---
+const getAssetPath = (path) => {
+  // Removes leading slash if present, then prepends the environment Base URL
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
+
 // --- PROJECT DATA ---
 const projectsData = {
   Planning: [
@@ -10,33 +17,33 @@ const projectsData = {
     { year: "2023-24", client: "MPC", location: "US", tech: "AspenTech", logo: "/logos/mpc.png" },
     { year: "2023", client: "AVEVA Client", location: "Far East", tech: "AVEVA", logo: "/logos/aveva.png" },
     { year: "2023", client: "AVEVA Client", location: "Middle East", tech: "AVEVA", logo: "/logos/aveva.png" },
-    { year: "2022-23", client: "IOCL", location: "India", tech: "AVEVA", logo: "/logos/iocl.png" },
+    { year: "2022-23", client: "IOCL", location: "India", tech: "AVEVA", logo: "/logos/iocl.jpg" }, // Note: changed extension to match your screenshot if needed
     { year: "2020-21", client: "Bangchak", location: "Thailand", tech: "AVEVA", logo: "/logos/bangchak.png" },
     { year: "2019-20", client: "Astron Energy", location: "South Africa", tech: "AVEVA", logo: "/logos/astron.png" },
   ],
   Scheduling: [
     { year: "2025", client: "Shell", location: "Qatar", tech: "AspenTech", logo: "/logos/shell.png" },
-    { year: "2025", client: "SATORP", location: "Saudi Arabia", tech: "AspenTech", logo: "/logos/satorp.png" },
+    { year: "2025", client: "SATORP", location: "Saudi Arabia", tech: "AspenTech", logo: "/logos/satorp.png" }, // Ensure satorp.png exists
     { year: "2024-25", client: "Shell", location: "Rheinland", tech: "AspenTech", logo: "/logos/shell.png" },
     { year: "2022-23", client: "MPC", location: "US", tech: "AspenTech", logo: "/logos/mpc.png" },
-    { year: "2022-23", client: "OQ", location: "Oman", tech: "AspenTech", logo: "/logos/oq.png" },
-    { year: "2022-23", client: "Dangote", location: "Nigeria", tech: "MS Excel", logo: "/logos/dangote.png" },
-    { year: "2021-23", client: "IOCL", location: "India", tech: "AVEVA", logo: "/logos/iocl.png" },
-    { year: "2021-22", client: "ZPC", location: "China", tech: "AspenTech", logo: "/logos/zpc.png" },
+    { year: "2022-23", client: "OQ", location: "Oman", tech: "AspenTech", logo: "/logos/oq.png" }, // Ensure oq.png exists
+    { year: "2022-23", client: "Dangote", location: "Nigeria", tech: "MS Excel", logo: "/logos/dangote.png" }, // Ensure dangote.png exists
+    { year: "2021-23", client: "IOCL", location: "India", tech: "AVEVA", logo: "/logos/iocl.jpg" },
+    { year: "2021-22", client: "ZPC", location: "China", tech: "AspenTech", logo: "/logos/zpc.png" }, // Ensure zpc.png exists
     { year: "2020-21", client: "Bangchak", location: "Thailand", tech: "AVEVA", logo: "/logos/bangchak.png" },
-    { year: "2018", client: "Yasref", location: "Saudi Arabia", tech: "AspenTech", logo: "/logos/yasref.png" },
-    { year: "2018", client: "Petronas", location: "Malaysia", tech: "AspenTech", logo: "/logos/petronas.png" },
-    { year: "2017", client: "Petro Rabigh", location: "KSA", tech: "AspenTech", logo: "/logos/petrorabigh.png" },
+    { year: "2018", client: "Yasref", location: "Saudi Arabia", tech: "AspenTech", logo: "/logos/yasref.png" }, // Ensure yasref.png exists
+    { year: "2018", client: "Petronas", location: "Malaysia", tech: "AspenTech", logo: "/logos/petronas.png" }, // Ensure petronas.png exists
+    { year: "2017", client: "Petro Rabigh", location: "KSA", tech: "AspenTech", logo: "/logos/petrorabigh.png" }, // Ensure petrorabigh.png exists
     { year: "2016-18", client: "ADNOC", location: "UAE", tech: "AspenTech", logo: "/logos/adnoc.png" },
   ],
   Digitalization: [
-    { year: "2018-19", client: "Nayara Energy", location: "India", tech: "Digital Transformation", logo: "/logos/nayara.png" },
-    { year: "2023", client: "Global PetroChem", location: "Europe", tech: "Digital Twin", logo: "/logos/placeholder.png" } 
+    { year: "2018-19", client: "Nayara Energy", location: "India", tech: "Digital Transformation", logo: "/logos/nayara.png" }, // Ensure nayara.png exists
+    // { year: "2023", client: "Global PetroChem", location: "Europe", tech: "Digital Twin", logo: "/logos/placeholder.png" } 
   ],
   "Partner Services": [
     { year: "2018", client: "Nayara Energy", location: "Jamnagar", tech: "Partner Service", logo: "/logos/nayara.png" },
-    { year: "2018", client: "Reliance Industries Ltd", location: "Patalganga", tech: "Partner Service", logo: "/logos/ril.png" },
-    { year: "2017", client: "HMEL", location: "Bhatinda", tech: "Partner Service", logo: "/logos/hmel.png" }
+    { year: "2018", client: "Reliance Industries Ltd", location: "Patalganga", tech: "Partner Service", logo: "/logos/ril.png" }, // Ensure ril.png exists
+    { year: "2017", client: "HMEL", location: "Bhatinda", tech: "Partner Service", logo: "/logos/hmel.png" } // Ensure hmel.png exists
   ],
   "Consulting Assignments": [
     { year: "2025", client: "Oil Major", location: "Western Asia" },
@@ -167,8 +174,9 @@ const Projects = () => {
                 </div>
                 <div className="timeline-content">
                   <div className="project-logo-wrapper">
+                    {/* FIXED: Using getAssetPath helper here */}
                     <img 
-                      src={project.logo} 
+                      src={getAssetPath(project.logo)} 
                       alt={`${project.client} logo`} 
                       className="project-logo"
                       onError={(e) => {
