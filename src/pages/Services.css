@@ -31,7 +31,7 @@
 
 .service-section {
   display: flex;
-  align-items: flex-start; /* Changed to flex-start for bullet lists */
+  align-items: flex-start;
   padding: 6rem 10%;
   gap: 5rem;
   scroll-margin-top: 80px;
@@ -68,7 +68,7 @@
   line-height: 1.1;
 }
 
-/* --- LIST STYLES (New) --- */
+/* --- LIST STYLES (Fixed Alignment) --- */
 .service-list {
   list-style: none;
   padding: 0;
@@ -77,7 +77,7 @@
 
 .service-list > li {
   font-size: 1.05rem;
-  color: var(--text-dark); /* Darker text for main points */
+  color: var(--text-dark);
   line-height: 1.6;
   margin-bottom: 0.8rem;
   padding-left: 1.5rem;
@@ -87,11 +87,12 @@
 /* Custom Bullet Point for Main Items */
 .service-list > li::before {
   content: "•";
-  color: #9ca3af; /* Light gray bullet */
-  font-size: 1.5rem;
+  color: #9ca3af;
+  font-size: 1.5rem; /* Reduced slightly for better alignment */
+  line-height: 1;    /* Resets line height to prevent pushing down */
   position: absolute;
   left: 0;
-  top: -4px;
+  top: 2px; /* Precision adjustment to align with text cap-height */
 }
 
 /* Sub-list Styles */
@@ -103,33 +104,35 @@
 
 .sub-list li {
   font-size: 1rem;
-  color: #374151; /* Slightly lighter for sub-points */
+  color: #374151;
   margin-bottom: 0.5rem;
   position: relative;
   padding-left: 1rem;
+  line-height: 1.6;
 }
 
 /* Custom Bullet Point for Sub Items */
 .sub-list li::before {
   content: "•";
-  color: var(--primary-blue); /* Blue bullet for sub-points */
+  color: var(--primary-blue);
   font-weight: bold;
   font-size: 1.2rem;
+  line-height: 1;
   position: absolute;
   left: -0.5rem;
-  top: -3px;
+  top: 4px; /* Precision adjustment */
 }
 
 /* Image Content */
 .service-image-wrapper {
   flex: 1;
   min-width: 300px;
-  height: 500px; /* Taller image to match long text lists */
+  height: 500px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
   position: sticky;
-  top: 100px; /* Keeps image visible while scrolling long lists */
+  top: 100px;
 }
 
 .service-image {
@@ -154,6 +157,6 @@
   .service-image-wrapper {
     height: 350px;
     width: 100%;
-    position: static; /* Disable sticky on mobile */
+    position: static;
   }
 }
