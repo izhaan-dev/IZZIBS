@@ -48,11 +48,7 @@ const projectsData = {
   Digitalization: [
     { year: "2018-19", client: "Nayara Energy", location: "India", tech: "Digital Transformation", logo: "/logos/nayara.png" },
   ],
-  "Partner Services": [
-    { year: "2018", client: "Nayara Energy", location: "Jamnagar", tech: "Partner Service", logo: "/logos/nayara.png" },
-    { year: "2018", client: "Reliance Industries Ltd", location: "Patalganga", tech: "Partner Service", logo: "/logos/ril.png" },
-    { year: "2017", client: "HMEL", location: "Bhatinda", tech: "Partner Service", logo: "/logos/hmel.png" }
-  ],
+
   "Consulting Assignments": [
     { year: "2025", client: "Oil Major", location: "Western Asia" },
     { year: "2025", client: "Refinery", location: "South-east Asia" },

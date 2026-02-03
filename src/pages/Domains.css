@@ -1,31 +1,296 @@
-/* ... (Your existing CSS) ... */
+/* --- PAGE LAYOUT --- */
+.domains-page {
+  background: linear-gradient(-45deg, #f1f5f9, #e2e8f0, #f8fafc, #edf2f7);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+  color: var(--text-dark);
+}
 
-/* Status Messages */
-.status-msg {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  font-weight: 600;
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- HEADER --- */
+.domains-header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 5rem 10% 3rem;
   text-align: center;
-  padding: 0.8rem;
+  position: relative;
+  z-index: 10;
+}
+
+.domains-header h1 {
+  font-size: 3.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.domains-header p {
+  font-size: 1.25rem;
+  color: var(--text-medium);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- MAIN LAYOUT (Sidebar + Content) --- */
+.domains-layout {
+  display: flex;
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 40px;
+  gap: 4rem;
+  position: relative;
+}
+
+/* --- SIDEBAR --- */
+.domains-sidebar {
+  flex: 0 0 300px;
+  position: relative;
+}
+
+.domains-sidebar nav {
+  position: sticky;
+  top: 120px;
+}
+
+.domains-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 2px solid #e2e8f0;
+}
+
+.domains-sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+/* Sidebar Active/Hover States */
+.sidebar-link:hover {
+  color: var(--primary-blue);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 0 8px 8px 0;
+}
+
+.sidebar-link.active {
+  color: var(--primary-blue);
+  font-weight: 700;
+  background: #fff;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.sidebar-link.active::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--primary-blue);
+  border-radius: 2px;
+}
+
+/* --- CONTENT LIST --- */
+.domains-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  min-width: 0;
+}
+
+/* --- DOMAIN CARD --- */
+.domain-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  scroll-margin-top: 120px;
+}
+
+.domain-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(11, 74, 160, 0.08);
+  border-color: rgba(11, 74, 160, 0.2);
+}
+
+/* Card Header */
+.domain-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 1rem;
+}
+
+.domain-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #e2e8f0; 
+  line-height: 1;
+}
+
+.domain-card h2 {
+  font-size: 2rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+  margin: 0;
+}
+
+.domain-description {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+/* --- CONTENT LAYOUT (Grid) --- */
+.domain-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; 
+  gap: 3rem;
+}
+
+.domain-section h3 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #64748b;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* Services List (Fixed Alignment) */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 0.8rem;
+  color: var(--text-dark);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.service-list li::before {
+  content: "•";
+  color: var(--primary-blue);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0px; /* Aligned top to match line height */
+  line-height: 0.85; /* Match text line-height so it centers */
+}
+
+/* Technologies Section (One per line) */
+.tech-tags {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align left */
+  gap: 0.8rem;
+}
+
+.tech-tag {
+  background-color: #f0f9ff;
+  color: var(--primary-blue);
+  padding: 0.6rem 1rem; /* Slightly larger padding for better readability */
   border-radius: 8px;
-  animation: fadeIn 0.5s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid #bae6fd;
+  transition: all 0.2s ease;
+  display: inline-block; /* Ensure it wraps text nicely if too long */
 }
 
-.status-msg.success {
-  background-color: #dcfce7;
-  color: #15803d;
-  border: 1px solid #86efac;
+.domain-card:hover .tech-tag {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border-color: var(--primary-blue);
 }
 
-.status-msg.error {
-  background-color: #fee2e2;
-  color: #991b1b;
-  border: 1px solid #fca5a5;
+/* --- ANIMATION --- */
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Disable button when submitting */
-.contact-form button:disabled {
-  background-color: #94a3b8;
-  cursor: not-allowed;
-  transform: none;
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1100px) {
+  .domains-layout {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 2rem;
+  }
+
+  .domains-sidebar {
+    display: none;
+  }
+
+  .domains-list {
+    width: 100%;
+  }
+
+  .domain-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .domains-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .domain-card {
+    padding: 1.5rem;
+  }
+  
+  .domain-number {
+    font-size: 2.5rem;
+  }
+
+  .domain-card h2 {
+    font-size: 1.5rem;
+  }
 }
