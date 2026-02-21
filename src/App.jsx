@@ -6,6 +6,7 @@ import Services from './pages/Services';
 import Domains from './pages/Domains';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import About from './pages/About';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/domains" element={<Domains />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
         <Footer /> {/* Add Footer Here */}
