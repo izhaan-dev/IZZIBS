@@ -42,8 +42,8 @@ const InteractiveMap = () => {
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{
-          scale: 120, // Adjust zoom
-          center: [20, 10] // Adjust initial focus [long, lat]
+          scale: 135, // Adjust zoom
+          center: [0, 20] // Adjust initial focus [long, lat]
         }}
         style={{ width: "100%", height: "100%" }}
       >

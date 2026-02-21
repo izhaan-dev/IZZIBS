@@ -195,6 +195,11 @@
   overflow: hidden;
 }
 
+
+.home-domain-card.crop-top .home-card-image-wrapper img {
+  object-position: center bottom;
+}
+
 .home-card-image-wrapper img {
   width: 100%;
   height: 100%;
@@ -252,7 +257,7 @@
 .partners-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 2.2rem;
   align-items: stretch;
 }
 
@@ -260,7 +265,7 @@
   background: var(--white);
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  padding: 2rem 1.5rem;
+  padding: 0.5rem ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -271,6 +276,7 @@
 }
 
 .partner-logo {
+  margin-top: 0.8rem;
   height: 120px;
   width: auto;
   max-width: 100%;
@@ -375,18 +381,18 @@
 
 .clients-container {
   display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  align-items: center;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
 }
 
 .map-visual {
-  width: 100%;
-  min-width: 300px;
+  width: 1500px;
+  flex: 7;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 20px;
-  height: 600px;
+  height: 550px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -421,12 +427,29 @@
 }
 
 .regions-list {
-  width: 100%;
-  margin-top: 4rem;
+  width: 30%;
+  flex: 3;
+  margin-top: 0;
   min-width: 300px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding-left: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .clients-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .map-visual {
+    width: 100%;
+  }
+  .regions-list {
+    width: 100%;
+    margin-top: 2rem;
+    padding-left: 0;
+  }
 }
 
 .region-item {

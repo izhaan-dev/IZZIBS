@@ -16,25 +16,27 @@ const domainsData = [
     id: 1, 
     title: "Planning & Optimization", 
     targetId: "planning", 
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" 
+    img: getAssetPath("domainphotos/Planning.png"),
+    className: "crop-top" 
   },
   { 
     id: 2, 
     title: "Scheduling & Blending", 
     targetId: "scheduling", 
-    img: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80" 
+    img: getAssetPath("domainphotos/Scheduling.png"),
+    className: "crop-top" 
   },
   { 
     id: 3, 
     title: "Process Optimization", 
     targetId: "consulting",
-    img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80" 
+    img: getAssetPath("domainphotos/Process Optimization.jpg") 
   },
   { 
     id: 4, 
     title: "Manufacturing Info Systems", 
     targetId: "mis", 
-    img: "https://izzibs.com/imgs/domain-h_img4.jpg" 
+    img: getAssetPath("domainphotos/MIS_enhanced.jpg") 
   },
   { 
     id: 5, 
@@ -46,7 +48,7 @@ const domainsData = [
     id: 6, 
     title: "Digitalization", 
     targetId: "digital", 
-    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" 
+    img: getAssetPath("domainphotos/Digitalisation.jpg") 
   }
 ];
 
@@ -147,7 +149,7 @@ const Home = () => {
           {domainsData.map((domain) => (
             <div 
               key={domain.id} 
-              className="home-domain-card" 
+              className={`home-domain-card ${domain.className || ''}`} 
               onClick={() => handleDomainClick(domain.targetId)}
             >
               <div className="home-card-image-wrapper">
