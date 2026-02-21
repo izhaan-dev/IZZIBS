@@ -26,21 +26,21 @@ const domainsData = [
   },
   { 
     id: 3, 
-    title: "Process Modelling", 
-    targetId: "process", 
-    img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" 
-  },
-  { 
-    id: 4, 
     title: "Process Optimization", 
     targetId: "consulting",
     img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80" 
   },
   { 
-    id: 5, 
+    id: 4, 
     title: "Manufacturing Info Systems", 
     targetId: "mis", 
     img: "https://izzibs.com/imgs/domain-h_img4.jpg" 
+  },
+  { 
+    id: 5, 
+    title: "Process Modelling", 
+    targetId: "process", 
+    img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" 
   },
   { 
     id: 6, 

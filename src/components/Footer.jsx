@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaPhoneAlt, FaEnvelope, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaLinkedinIn, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -44,6 +44,14 @@ const Footer = () => {
             <a 
               href="https://www.facebook.com/izzibusinessservices/"
               className="social-link"><FaFacebookF /></a>
+            <a 
+              href="https://wa.me/917383785636" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="social-link"
+            >
+              <FaWhatsapp />
+            </a>
             {/* LinkedIn (Actual link) */}
             <a 
               href="https://www.linkedin.com/company/izzi-business-services" 

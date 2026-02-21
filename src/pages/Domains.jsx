@@ -60,6 +60,21 @@ const domainsData = [
     ]
   },
   {
+    id: "process-optimization",
+    title: "Process Optimization",
+    description: "Real-time process optimization to enhance profitability and efficiency.",
+    services: [
+      "Real Time Process Optimization with Equation-Based Models",
+      "Scalable and Maintainable Optimization Solution",
+      "Automated Optimization and Reporting",
+      "Integrates heat and material balance rigorous simulation, data reconciliation, gross error detection, economic optimization, and performance monitoring into a single user environment",
+      "Results Visualisation and Key Performance Indicators"
+    ],
+    technologies: [
+      "AVEVA Process Optimization (ROMeo)"
+    ]
+  },
+  {
     id: "process",
     title: "Process Modelling and Simulation",
     description: "Rigorous simulation models to validate and improve process performance.",
@@ -103,7 +118,7 @@ const domainsData = [
     ],
     technologies: [
       "AVEVA Production Accounting (Error solver)",
-      "AVEVA Offsites Management",
+      "Belsim Vali",
       "Aspen Operations Reconciliation and Accounting (AORA)",
       "Aspen Unified Reconciliation and Accounting (AURA)",
       "Aspen Tank and Operations Manager (ATOMS)"

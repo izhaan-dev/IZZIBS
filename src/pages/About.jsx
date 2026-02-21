@@ -7,31 +7,29 @@ const getAssetPath = (path) => {
   return `${import.meta.env.BASE_URL}${cleanPath}`;
 };
 
-const employees = Array.from({ length: 14 }, (_, i) => ({
-  id: i + 1,
-  name: `Employee Name ${i + 1}`,
-  position: 'Employee Position',
-  imageUrl: 'https://via.placeholder.com/200',
-}));
+const employees = [
+  { id: 1, name: 'Anwar Tatariya', position: 'Managing Partner', imageUrl: getAssetPath('Team Pics/Anwar PP.png') },
+  { id: 2, name: 'Gazala Tatariya', position: 'Partner', imageUrl: getAssetPath('Team Pics/Gazala Hijab.jpg') },
+  { id: 3, name: 'Vishal Bhalala', position: 'Technical Lead', imageUrl: getAssetPath('Team Pics/Vishal.png') },
+  { id: 4, name: 'Kishan Shukla', position: 'Team Lead', imageUrl: getAssetPath('Team Pics/Kishan.jpg') },
+  { id: 5, name: 'John Abraham', position: 'Senior Consultant', imageUrl: getAssetPath('Team Pics/John.jpg') },
+  { id: 6, name: 'Tarang Thakar', position: 'Senior Consultant', imageUrl: getAssetPath('Team Pics/Tarang.jpg') },
+  { id: 7, name: 'Sohil Bloch', position: 'Consultant', imageUrl: getAssetPath('Team Pics/Sohil B.jpg') },
+  { id: 8, name: 'Nikunj Nakum', position: 'Consultant', imageUrl: getAssetPath('Team Pics/Nikunj.jpg') },
+  { id: 9, name: 'Shrey Choksi', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Shrey.jpg') },
+  { id: 10, name: 'Manav Joisar', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Maanav.jpg') },
+  { id: 11, name: 'Isha Jasani', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Isha.jpg') },
+  { id: 12, name: 'Neelam Mahto', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Neelam.jpg') },
+  { id: 13, name: 'Sohil Jethava', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Sohil J.jpg') },
+  { id: 14, name: 'Sugat tembhurne', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Sugat.jpeg') },
+];
 
 const About = () => {
   return (
     <div className="about-container">
-      <section 
-        className="hero-section-about"
-        style={{ backgroundImage: `url(${getAssetPath('background.png')})` }}
-      >
-        <div className="hero-overlay"></div>
-        <div className="hero-content slide-up">
-          <h1>Our Team</h1>
-          <p>
-            Meet the dedicated professionals who drive our success. Our team is composed of experienced and passionate individuals committed to delivering the best results for our clients.
-          </p>
-        </div>
-      </section>
-
+      
       <section className="team-section">
-        <h2 className="section-title">Meet the Employees</h2>
+        <h2 className="section-title">Our Team</h2>
         <div className="team-grid">
           {employees.map(employee => (
             <div key={employee.id} className="team-member-card">

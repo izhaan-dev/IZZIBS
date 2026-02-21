@@ -251,8 +251,8 @@
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   align-items: stretch;
 }
 
@@ -271,7 +271,7 @@
 }
 
 .partner-logo {
-  height: 90px;
+  height: 120px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -375,18 +375,18 @@
 
 .clients-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 4rem;
   align-items: center;
 }
 
 .map-visual {
-  flex: 1;
+  width: 100%;
   min-width: 300px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 20px;
-  height: 450px;
+  height: 600px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -421,7 +421,8 @@
 }
 
 .regions-list {
-  flex: 1;
+  width: 100%;
+  margin-top: 4rem;
   min-width: 300px;
   display: flex;
   flex-direction: column;

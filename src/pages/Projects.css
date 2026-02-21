@@ -260,6 +260,13 @@
   font-weight: 700;
 }
 
+.project-description {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  margin: -0.2rem 0 0.8rem;
+  line-height: 1.5;
+}
+
 .project-details {
   display: flex;
   align-items: center;
