@@ -90,21 +90,7 @@ const domainsData = [
       "KBC Petro Sim"
     ]
   },
-  {
-    id: "consulting",
-    title: "Consulting Services",
-    description: "Expert advisory to unlock hidden value and operational efficiency.",
-    services: [
-      "Conduct profitability studies to enhance process efficiency",
-      "Optimize process unit operations and key parameters",
-      "Upgrade low-value streams to higher-value products",
-      "Explore & evaluate new intermediate processing feasibility",
-      "Assess and evaluate feasibility of new crude processing",
-      "Minimize Quality Giveaway",
-      "Identify Bottlenecks"
-    ],
-    technologies: [] 
-  },
+
   {
     id: "mis",
     title: "Manufacturing Information Services (MIS)",
@@ -139,13 +125,28 @@ const domainsData = [
       "Digital logbook - operations & maintenance"
     ],
     technologies: [
-      "Custom Data integration",
+      "AVEVA PI and PI Vision",
+      "JaajiTech insis Suite",
       "Aspen Inmation",
       "Aspen InfoPlus.21 (IP 21)",
-      "AVEVA PI and PI Vision",
-      "JaajiTech insis Suite"
+      "Custom Data integration"
     ]
   },
+  {
+    id: "consulting",
+    title: "Consulting Services",
+    description: "Expert advisory to unlock hidden value and operational efficiency.",
+    services: [
+      "Conduct profitability studies to enhance process efficiency",
+      "Optimize process unit operations and key parameters",
+      "Upgrade low-value streams to higher-value products",
+      "Explore & evaluate new intermediate processing feasibility",
+      "Assess and evaluate feasibility of new crude processing",
+      "Minimize Quality Giveaway",
+      "Identify Bottlenecks"
+    ],
+    technologies: [] 
+  }
 
 ];
 

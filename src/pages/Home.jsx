@@ -186,7 +186,7 @@ const Home = () => {
       <section className="profile-section">
         <div className="profile-wrapper">
           <div className="profile-image">
-            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Company Profile Brochure" />
+            <img src={getAssetPath('company profile.png')} alt="Company Profile Brochure" />
           </div>
           <div className="profile-content">
             <h2>Company Profile</h2>

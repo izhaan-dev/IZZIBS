@@ -17,17 +17,26 @@
   }
   
   .team-section {
-    padding: 2rem 10%;
+    padding: 2.5rem 10%;
     background-color: var(--white);
   }
   
   .section-title {
     text-align: center;
-    font-size: 3.5rem;
-    margin-bottom: 4rem;
+    font-size: 4.5rem;
+    margin-bottom: 2rem; /* Reduced margin */
     color: var(--primary-blue);
     font-weight: 700;
     letter-spacing: -0.02em;
+  }
+
+  .section-subheader {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--text-medium);
+    margin: -1rem auto 0;
+    max-width: 600px;
   }
   
   .team-grid {
@@ -80,6 +89,80 @@
     font-size: 0.9rem;
     color: var(--text-medium);
   }
+
+  .team-header-section {
+    padding: 4rem 10%;
+    background: linear-gradient(160deg, #e6f0ff, #f8f7ff);
+    border-bottom: 4px solid;
+    border-image-source: linear-gradient(to left, var(--primary-blue), #93c5fd);
+    border-image-slice: 1;
+    text-align: center;
+  }
+
+  .team-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2.5rem; /* Adjusted margin */
+    font-size: 1.1rem;
+    color: var(--text-medium);
+  }
+
+  .life-at-izzibs-btn {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex; /* Changed from flex */
+    align-items: center;
+  }
+
+  .life-at-izzibs-btn:hover {
+    background-color: #0a3d80;
+  }
+
+  .life-at-izzibs-section {
+    padding: 6rem 10%;
+    min-height: 500px; /* Gives space for scrolling */
+    background-color: #f8f9fa; /* A slightly different background */
+  }
+
+  .life-at-izzibs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+
+  .carousel-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .carousel-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+
+  .carousel-description {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-blue);
+    background-color: var(--white);
+  }
+
+  .carousel .slide img {
+    height: 350px;
+    object-fit: cover;
+  }
   
   /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 768px) {
@@ -90,6 +173,19 @@
   
   .team-section {
     padding: 4rem 5%;
+  }
+
+  .team-header-section {
+    flex-direction: column;
+    padding: 2rem 5%;
+  }
+
+  .life-at-izzibs-btn {
+    margin-top: 1rem;
+  }
+
+  .life-at-izzibs-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -9,7 +9,7 @@ const servicesList = [
     title: "Implementation",
     subtitle: "Seamless Project Delivery",
     icon: <FaLightbulb />,
-    img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop",
+    img: "https://www.pexels.com/photo/women-at-the-meeting-3810793/",
     points: [
       "Turnkey project implementation",
       "Kick-off Meeting and Project Alignment",

@@ -46,7 +46,7 @@ const projectsData = {
     { year: "2025-26", client: "Pearl GTL", location: "Qatar", tech: "AspenTech", logo: "/logos/shell.png", description: "Converted a Gas-to-Liquids (GTL) scheduling model from APS to Aspen Unified Scheduling with custom JavaScript logic." },
   ],
   MIS: [
-    { year: "2026", client: "Petro Rabigh", location: "KSA", tech: "Belsim Vali", logo: "/logos/petrorabigh.png", description: "Day to day Production accounting Model run support" },
+    { year: "2026", client: "Petro Rabigh", location: "KSA", tech: "Belsim Vali", logo: "/logos/petrorabigh.png", description: "Day to day Production Accounting Model run support" },
   ],
   Digitalization: [
     { year: "2018-19", client: "Nayara Energy", location: "India", tech: "Digital Transformation", logo: "/logos/nayara.png", description: "Implemented Jaajitech's inSis Suite for refinery-wide digitalization, automating over 35 reports and tracking 200+ KPIs via real-time dashboards." },
