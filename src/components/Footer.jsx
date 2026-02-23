@@ -14,8 +14,8 @@ const Footer = () => {
         {/* LEFT SECTION: Address & Contact */}
         <div className="footer-section left">
           <p className="address-text">
-            4th floor, Royal Orchid, 12/4, Gandhi Nagar Main <br />
-            Rd, Patel Colony, Jamnagar, Gujarat 361008
+            4ᵗʰ floor, Royal Orchid, 12/4 Patel Colony, <br />
+             Gandhinagar Road, Jamnagar, Gujarat 361008
           </p>
           
           <div className="contact-row">
@@ -67,7 +67,8 @@ const Footer = () => {
             <Link to="/services">Services</Link> | 
             <Link to="/domains">Domains</Link> | 
             <Link to="/projects">Projects</Link> | 
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/contact">Contact Us</Link> | 
+            <Link to="/about">About Us</Link>
           </div>
 
           {/* <p className="copyright">

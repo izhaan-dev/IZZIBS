@@ -239,6 +239,14 @@
   border-color: var(--primary-blue);
 }
 
+.service-subsection-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 /* --- ANIMATION --- */
 .fade-in-up {
   animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;

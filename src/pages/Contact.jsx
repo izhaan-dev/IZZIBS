@@ -81,8 +81,9 @@ const Contact = () => {
               <div className="detail-text">
                 <h3>Visit Us</h3>
                 <p>
-                  4th floor, Royal Orchid, 12/4, <br/>
-                  Gandhi Nagar Main Rd, Patel Colony, <br/>
+                  4ᵗʰ Floor, Royal Orchid, <br/>
+                  12/4 Patel Colony,
+                  Gandhinagar Road, <br/>
                   Jamnagar, Gujarat 361008
                 </p>
               </div>

@@ -370,7 +370,8 @@
 
 /* --- GLOBAL CLIENTS SECTION --- */
 .global-clients-section {
-  padding: 6rem 10%;
+  
+  padding: 6rem 5%;
   background-color: #081b33; 
   color: var(--white);
 }
@@ -382,17 +383,16 @@
 .clients-container {
   display: flex;
   flex-direction: row;
-  gap: 3rem;
-  align-items: flex-start;
+  gap: 5rem;
 }
 
 .map-visual {
-  width: 1500px;
-  flex: 7;
+  width:100%;
+  flex: 20;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 20px;
-  height: 550px;
+  height: 650px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -421,20 +421,21 @@
 }
 
 .map-overlay-text span {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #e2e8f0;
 }
 
 .regions-list {
   width: 30%;
-  flex: 3;
+  flex: 2;
   margin-top: 0;
   min-width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding-left: 3rem;
+  justify-content: center;
+  gap: 1rem;
+  padding-left: 2rem;
 }
 
 @media (max-width: 1024px) {
@@ -477,8 +478,24 @@
 .color-3 { color: #fbbf24; } 
 .color-4 { color: #a78bfa; } 
 
-.region-item p {
-  color: #9ca3af;
-  font-size: 0.95rem;
-  margin: 0;
+.domain-link {
+  text-decoration: none;
+}
+
+.non-clickable {
+  cursor: default;
+}
+.non-clickable:hover {
+  transform: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-color: #e2e8f0;
+}
+.non-clickable:hover h3 {
+  color: var(--text-dark);
+}
+.non-clickable:hover .arrow-indicator {
+  opacity: 0;
+}
+.non-clickable .arrow-indicator {
+  display: none;
 }

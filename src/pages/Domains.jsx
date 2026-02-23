@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Domains.css';
 
 const domainsData = [
@@ -95,15 +96,19 @@ const domainsData = [
     id: "mis",
     title: "Manufacturing Information Services (MIS)",
     description: "Bridging the gap between plant data and business decision-making.",
-    services: [
-      "Production accounting & Data integration (LIMS, ERPs, Oil movements)",
-      "Monthly and Yearly Mass balance and Reconciliation",
-      "Customized reporting",
-      "Production tracking, monitoring, trending & controlling",
-      "Integration with scheduling and production accounting"
-    ],
+    services: {
+      "Production accounting": [
+        "Data integration with production systems such as oil movements, LIMS, ERPs and web based manual forms",
+        "Monthly and Yearly Mass balance and Reconciliation",
+        "Customized reporting",
+      ],
+      "Oil movement": [
+        "Production tracking, monitoring, trending, controlling and analyzing oil movements",
+        "Integration with scheduling and production accounting",
+      ]
+    },
     technologies: [
-      "AVEVA Production Accounting (Error solver)",
+      "AVEVA Production Accounting (Error Solver)",
       "Belsim Vali",
       "Aspen Operations Reconciliation and Accounting (AORA)",
       "Aspen Unified Reconciliation and Accounting (AURA)",
@@ -152,9 +157,20 @@ const domainsData = [
 
 const Domains = () => {
   const [activeId, setActiveId] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        setActiveId(id);
+      }
+    } else {
+        window.scrollTo(0, 0);
+    }
 
     // Scroll Spy Logic
     const handleScroll = () => {
@@ -164,7 +180,7 @@ const Domains = () => {
       sections.forEach((section) => {
         const top = section.offsetTop;
         const height = section.offsetHeight;
-        if (window.scrollY >= (top - 200) && window.scrollY < (top + height - 200)) {
+        if (window.scrollY >= (top - 101) && window.scrollY < (top + height - 101)) {
           currentId = section.getAttribute('id');
         }
       });
@@ -174,7 +190,7 @@ const Domains = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -233,11 +249,24 @@ const Domains = () => {
                 {/* Left Column: Services */}
                 <div className="domain-section services-section">
                   <h3>Key Activities</h3>
-                  <ul className="service-list">
-                    {domain.services.map((service, i) => (
-                      <li key={i}>{service}</li>
-                    ))}
-                  </ul>
+                  {Array.isArray(domain.services) ? (
+                    <ul className="service-list">
+                      {domain.services.map((service, i) => (
+                        <li key={i}>{service}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    Object.keys(domain.services).map(key => (
+                      <div key={key}>
+                        <h4 className="service-subsection-title">{key}</h4>
+                        <ul className="service-list">
+                          {domain.services[key].map((service, i) => (
+                            <li key={i}>{service}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))
+                  )}
                 </div>
 
                 {/* Right Column: Technologies */}

@@ -38,14 +38,14 @@ const countryColors = {
 
 const InteractiveMap = () => {
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div style={{ width: "100%", height: "100%", overflow: "hidden" }}>
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{
           scale: 135, // Adjust zoom
           center: [0, 20] // Adjust initial focus [long, lat]
         }}
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "120%", marginTop: "-10%" }}
       >
         <Geographies geography={geoUrl}>
           {({ geographies }) =>

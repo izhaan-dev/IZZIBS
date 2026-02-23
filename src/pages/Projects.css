@@ -455,7 +455,7 @@
 }
 
 .snake-year {
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   font-weight: 800;
   color: var(--primary-blue);
   background: #eff6ff;
@@ -466,7 +466,7 @@
 }
 
 .snake-client {
-  font-size: 0.85rem;
+  font-size: 1.0625rem;
   color: var(--text-dark);
   margin: 0.1rem 0;
   line-height: 1.2;
@@ -474,7 +474,7 @@
 }
 
 .snake-location {
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   color: var(--text-medium);
 }
 

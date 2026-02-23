@@ -1,4 +1,5 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { FaDownload, FaGlobeAmericas, FaLightbulb, FaBullhorn, FaPencilAlt, FaComments } from 'react-icons/fa';
 import './Home.css';
 import InteractiveMap from '../components/InteractiveMap';
@@ -17,38 +18,44 @@ const domainsData = [
     title: "Planning & Optimization", 
     targetId: "planning", 
     img: getAssetPath("domainphotos/Planning.png"),
-    className: "crop-top" 
+    className: "crop-top",
+    clickable: true
   },
   { 
     id: 2, 
     title: "Scheduling & Blending", 
     targetId: "scheduling", 
     img: getAssetPath("domainphotos/Scheduling.png"),
-    className: "crop-top" 
+    className: "crop-top",
+    clickable: true
   },
   { 
     id: 3, 
     title: "Process Optimization", 
-    targetId: "consulting",
-    img: getAssetPath("domainphotos/Process Optimization.jpg") 
+    targetId: "process-optimization",
+    img: getAssetPath("domainphotos/Process Optimization.jpg"),
+    clickable: true
   },
   { 
     id: 4, 
     title: "Manufacturing Info Systems", 
     targetId: "mis", 
-    img: getAssetPath("domainphotos/MIS_enhanced.jpg") 
+    img: getAssetPath("domainphotos/MIS_enhanced.jpg"),
+    clickable: true
   },
   { 
     id: 5, 
     title: "Process Modelling", 
     targetId: "process", 
-    img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" 
+    img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80",
+    clickable: true
   },
   { 
     id: 6, 
     title: "Digitalization", 
     targetId: "digital", 
-    img: getAssetPath("domainphotos/Digitalisation.jpg") 
+    img: getAssetPath("domainphotos/Digitalisation.jpg"),
+    clickable: true
   }
 ];
 
@@ -94,17 +101,12 @@ const servicesPreview = [
 const globalRegions = [
   { region: "South & East Asia", countries: "India, South Korea, Thailand, Vietnam, Malaysia, Indonesia, Philippines, China" },
   { region: "Central & West Asia", countries: "Saudi Arabia, UAE, Oman, Qatar, Azerbaijan" },
-  { region: "Americas", countries: "USA, Colombia" },
+  { region: "Americas", countries: "United States of America, Colombia" },
   { region: "Europe & Africa", countries: "South Africa, Nigeria, Germany" },
   { region: "Australia", countries: "Australia" }
 ];
 
 const Home = () => {
-  const navigate = useNavigate();
-
-  const handleDomainClick = (targetId) => {
-    navigate(`/domains#${targetId}`);
-  };
 
   return (
     <div className="home-container">
@@ -146,21 +148,32 @@ const Home = () => {
       <section className="home-domains">
         <h2 className="section-title">Domains</h2>
         <div className="home-domains-grid">
-          {domainsData.map((domain) => (
-            <div 
-              key={domain.id} 
-              className={`home-domain-card ${domain.className || ''}`} 
-              onClick={() => handleDomainClick(domain.targetId)}
-            >
-              <div className="home-card-image-wrapper">
-                <img src={domain.img} alt={domain.title} />
+          {domainsData.map((domain) => {
+            const cardContent = (
+              <div
+                key={domain.id}
+                className={`home-domain-card ${domain.className || ''} ${!domain.clickable ? 'non-clickable' : ''}`}
+              >
+                <div className="home-card-image-wrapper">
+                  <img src={domain.img} alt={domain.title} />
+                </div>
+                <div className="home-card-content">
+                  <h3>{domain.title}</h3>
+                  {domain.clickable && <span className="arrow-indicator">→</span>}
+                </div>
               </div>
-              <div className="home-card-content">
-                <h3>{domain.title}</h3>
-                <span className="arrow-indicator">→</span>
+            );
+
+            return domain.clickable ? (
+              <HashLink key={domain.id} to={`/domains#${domain.targetId}`} className="domain-link">
+                {cardContent}
+              </HashLink>
+            ) : (
+              <div key={domain.id} className="domain-link">
+                {cardContent}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -216,10 +229,6 @@ const Home = () => {
         <div className="clients-container">
           <div className="map-visual">
             <InteractiveMap />
-            <div className="map-overlay-text">
-              <FaGlobeAmericas className="map-icon" />
-              <span>Active Across 5 Continents</span>
-            </div>
           </div>
 
           <div className="regions-list">

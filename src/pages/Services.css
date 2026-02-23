@@ -55,9 +55,11 @@
 .service-subtitle {
   display: block;
   font-size: 1rem;
-  color: var(--text-dark);
-  font-weight: 500;
-  margin-bottom: 0.25rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .service-text h2 {
@@ -99,28 +101,31 @@
 .sub-list {
   list-style: none;
   padding-left: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .sub-list li {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #374151;
   margin-bottom: 0.5rem;
   position: relative;
-  padding-left: 1rem;
+  padding-left: 1.2rem; /* Added space for the custom bullet */
   line-height: 1.6;
 }
 
 /* Custom Bullet Point for Sub Items */
 .sub-list li::before {
-  content: "•";
-  color: var(--primary-blue);
-  font-weight: bold;
-  font-size: 1.2rem;
-  line-height: 1;
+  content: "–"; /* En dash for sub-items */
+  color: #a0aec0; /* A lighter, more subtle color */
+  font-size: 1rem; /* Smaller than the main bullet */
   position: absolute;
-  left: -0.5rem;
-  top: 4px; /* Precision adjustment */
+  margin-top: 0.6rem;
+  margin-left: 0.2rem; /* Slight right shift for better alignment */
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  text-align: center;
+  width: 1em;
 }
 
 /* Image Content */

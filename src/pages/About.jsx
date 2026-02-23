@@ -31,12 +31,12 @@ const lifeAtIzzibsData = [
   {
     id: 1,
     images: [
-      { src: getAssetPath('Event Pics/Family Get Together 2024/IMG20240217181432.jpg'), positionClass: '' },
-      { src: getAssetPath('Event Pics/Family Get Together 2024/Picsart_24-02-18_13-21-12-582.jpg'), positionClass: '' },
-      { src: getAssetPath('Event Pics/Family Get Together 2024/Picsart_24-02-18_16-48-02-652.jpg'), positionClass: 'move-down' },
-      { src: getAssetPath('Event Pics/Family Get Together 2024/Picsart_24-02-18_17-01-17-866.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Internship Program 2026/3bb7def5-ebb8-4a11-87fd-6ea685d606eb.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Internship Program 2026/7d032269-1bab-4ba0-834a-23016126ee24.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Internship Program 2026/IMG_3686.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Internship Program 2026/IMG_3693.jpg'), positionClass: '' },
     ],
-    description: 'Family Get Together 2024',
+    description: 'Internship Program 2026',
   },
   {
     id: 2,
@@ -60,13 +60,14 @@ const lifeAtIzzibsData = [
   },
   {
     id: 4,
-    images: [
-      { src: getAssetPath('Event Pics/Internship Program 2026/3bb7def5-ebb8-4a11-87fd-6ea685d606eb.jpg'), positionClass: '' },
-      { src: getAssetPath('Event Pics/Internship Program 2026/7d032269-1bab-4ba0-834a-23016126ee24.jpg'), positionClass: '' },
-      { src: getAssetPath('Event Pics/Internship Program 2026/IMG_3686.jpg'), positionClass: '' },
-      { src: getAssetPath('Event Pics/Internship Program 2026/IMG_3693.jpg'), positionClass: '' },
+     images: [
+      { src: getAssetPath('Event Pics/Family Get Together 2024/IMG20240217181432.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Get Together 2024/Picsart_24-02-18_13-21-12-582.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Get Together 2024/Picsart_24-02-18_16-48-02-652.jpg'), positionClass: 'move-down' },
+      { src: getAssetPath('Event Pics/Family Get Together 2024/Picsart_24-02-18_17-01-17-866.jpg'), positionClass: '' },
     ],
-    description: 'Internship Program 2026',
+    description: 'Family Get Together 2024',
+    
   },
   {
     id: 5,

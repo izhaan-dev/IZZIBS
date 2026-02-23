@@ -31,19 +31,19 @@ const projectsData = {
     { year: "2019-20", client: "Astron Energy", location: "South Africa", tech: "AVEVA", logo: "/logos/astron.png", description: "Converted an existing LP model to AVEVA USC Plan with full integration into the AUSC Crude Assay Manager." },
   ],
   Scheduling: [
-    { year: "2021-23", client: "IOCL", location: "India", tech: "AVEVA", logo: "/logos/iocl.jpg", description: "Implemented multi-site refinery scheduling models for 9 refineries and 1 petrochemical complex using AVEVA USC Schedule." },
-    { year: "2020-21", client: "Bangchak", location: "Thailand", tech: "AVEVA", logo: "/logos/bangchak.png", description: "Executed a turnkey scheduling model implementation seamlessly integrated with AVEVA Plan and Assay." },
-    { year: "2017", client: "Petro Rabigh", location: "KSA", tech: "AspenTech", logo: "/logos/petrorabigh.png", description: "Developed an Aspen Petroleum Scheduler (APS) model incorporating refinery and petrochemical unit SMCs and custom reporting." },
-    { year: "2016-18", client: "ADNOC", location: "UAE", tech: "AspenTech", logo: "/logos/adnoc.png", description: "Provided Project Management Consulting (PMC) services for a Refinery Information System integrating planning, scheduling, pricing, and performance management." },
-    { year: "2022-23", client: "MPC", location: "US", tech: "AspenTech", logo: "/logos/mpc.png", description: "Developed and deployed 5 APS scheduling models with bulk event automation across 19 crude network desks." },
-    { year: "2018", client: "Petronas", location: "Malaysia", tech: "AspenTech", logo: "/logos/petronas.png", description: "Supplied SME services for APS and Multi Blend Optimizer (MBO) model testing, integration, and user training." },
-    { year: "2021-22", client: "ZPC", location: "China", tech: "AspenTech", logo: "/logos/zpc.png", description: "Partnered with Shell GS to rigorously test and deliver an integrated refinery and petrochem APS scheduling model." },
-    { year: "2022-23", client: "Dangote", location: "Nigeria", tech: "MS Excel", logo: "/logos/dangote.png", description: "Built a custom Excel-based refinery-wide scheduling and single/multi-grade gasoline blend optimization model." },
     { year: "2025-26", client: "SATORP", location: "Saudi Arabia", tech: "AspenTech", logo: "/logos/satorp.png", description: "Developed deeply integrated Petrochemical (APS) and Polymer (PS) scheduling models for the AMIRAL complex." },
+    { year: "2025-26", client: "Shell Pearl GTL", location: "Qatar", tech: "AspenTech", logo: "/logos/shell.png", description: "Converted a Gas-to-Liquids (GTL) scheduling model from APS to Aspen Unified Scheduling with custom JavaScript logic." },
     { year: "2024-25", client: "Shell Energy", location: "Rheinland", tech: "AspenTech", logo: "/logos/shell.png", description: "Modified existing APS models to handle decommissioned units and major turnaround inter-site transfers." },
+    { year: "2022-23", client: "MPC", location: "US", tech: "AspenTech", logo: "/logos/mpc.png", description: "Developed and deployed 5 APS scheduling models with bulk event automation across 19 crude network desks." },
+    { year: "2022-23", client: "Dangote", location: "Nigeria", tech: "MS Excel", logo: "/logos/dangote.png", description: "Built a custom Excel-based refinery-wide scheduling and single/multi-grade gasoline blend optimization model." },
     { year: "2022-23", client: "OQ", location: "Oman", tech: "AspenTech", logo: "/logos/oq.png", description: "Provided PMC services to design and execute APS outbound integrations into the OQ Integrated Management System (IMS)." },
+    { year: "2021-23", client: "IOCL", location: "India", tech: "AVEVA", logo: "/logos/iocl.jpg", description: "Implemented multi-site refinery scheduling models for 9 refineries and 1 petrochemical complex using AVEVA USC Schedule." },
+    { year: "2021-22", client: "ZPC", location: "China", tech: "AspenTech", logo: "/logos/zpc.png", description: "Partnered with Shell GS to rigorously test and deliver an integrated refinery and petrochem APS scheduling model." },
+    { year: "2020-21", client: "Bangchak", location: "Thailand", tech: "AVEVA", logo: "/logos/bangchak.png", description: "Executed a turnkey scheduling model implementation seamlessly integrated with AVEVA Plan and Assay." },
+    { year: "2018", client: "Petronas", location: "Malaysia", tech: "AspenTech", logo: "/logos/petronas.png", description: "Supplied SME services for APS and Multi Blend Optimizer (MBO) model testing, integration, and user training." },
     { year: "2018", client: "Yasref", location: "Saudi Arabia", tech: "AspenTech", logo: "/logos/yasref.png", description: "Delivered onsite technical support, model updates, and on-the-job scheduler training for APS and MBO systems." },
-    { year: "2025-26", client: "Pearl GTL", location: "Qatar", tech: "AspenTech", logo: "/logos/shell.png", description: "Converted a Gas-to-Liquids (GTL) scheduling model from APS to Aspen Unified Scheduling with custom JavaScript logic." },
+    { year: "2016-18", client: "ADNOC", location: "UAE", tech: "AspenTech", logo: "/logos/adnoc.png", description: "Provided Project Management Consulting (PMC) services for a Refinery Information System integrating planning, scheduling, pricing, and performance management." },
+    { year: "2017", client: "Petro Rabigh", location: "KSA", tech: "AspenTech", logo: "/logos/petrorabigh.png", description: "Developed an Aspen Petroleum Scheduler (APS) model incorporating refinery and petrochemical unit SMCs and custom reporting." },
   ],
   MIS: [
     { year: "2026", client: "Petro Rabigh", location: "KSA", tech: "Belsim Vali", logo: "/logos/petrorabigh.png", description: "Day to day Production Accounting Model run support" },
@@ -52,7 +52,7 @@ const projectsData = {
     { year: "2018-19", client: "Nayara Energy", location: "India", tech: "Digital Transformation", logo: "/logos/nayara.png", description: "Implemented Jaajitech's inSis Suite for refinery-wide digitalization, automating over 35 reports and tracking 200+ KPIs via real-time dashboards." },
   ],
 
-  "Consulting Assignments": [
+  "Consulting": [
     { year: "2025", client: "Oil Major", location: "Western Asia" },
     { year: "2025", client: "Refinery", location: "South-east Asia" },
     { year: "2025", client: "Refineries", location: "South-east Asia" },
@@ -93,7 +93,7 @@ const Projects = () => {
   const [animationClass, setAnimationClass] = useState("slide-in-up");
 
   const consultingRows = useMemo(() => {
-    return chunkArray(projectsData["Consulting Assignments"], 4);
+    return chunkArray(projectsData["Consulting"], 4);
   }, []);
 
   const handleTabChange = (newTab) => {
@@ -130,7 +130,7 @@ const Projects = () => {
 
       <div className={`projects-content-wrapper ${animationClass}`} key={activeTab}>
         
-        {activeTab === "Consulting Assignments" ? (
+        {activeTab === "Consulting" ? (
           /* --- SNAKE TIMELINE LAYOUT --- */
           <div className="snake-timeline-container">
             {consultingRows.map((row, rowIndex) => (
