@@ -23,7 +23,7 @@
   
   .section-title {
     text-align: center;
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     margin-bottom: 2rem; /* Reduced margin */
     color: var(--primary-blue);
     font-weight: 700;
@@ -91,7 +91,7 @@
   }
 
   .team-header-section {
-    padding: 4rem 10%;
+    padding: 2rem 10%;
     background: linear-gradient(160deg, #e6f0ff, #f8f7ff);
     border-bottom: 4px solid;
     border-image-source: linear-gradient(to left, var(--primary-blue), #93c5fd);
@@ -162,6 +162,12 @@
   .carousel .slide img {
     height: 350px;
     object-fit: cover;
+  }
+  .carousel .slide img.move-down {
+    object-position: 0 25%;
+  }
+  .carousel .slide img.move-down-less {
+    object-position: 0 0%;
   }
   
   /* --- RESPONSIVE ADJUSTMENTS --- */

@@ -31,62 +31,62 @@ const lifeAtIzzibsData = [
   {
     id: 1,
     images: [
-      'https://picsum.photos/seed/picsum1/800/600',
-      'https://picsum.photos/seed/picsum2/800/600',
-      'https://picsum.photos/seed/picsum3/800/600',
-      'https://picsum.photos/seed/picsum4/800/600',
+      { src: getAssetPath('Event Pics/Family Get Together 2024/IMG20240217181432.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Get Together 2024/Picsart_24-02-18_13-21-12-582.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Get Together 2024/Picsart_24-02-18_16-48-02-652.jpg'), positionClass: 'move-down' },
+      { src: getAssetPath('Event Pics/Family Get Together 2024/Picsart_24-02-18_17-01-17-866.jpg'), positionClass: '' },
     ],
-    description: 'Team building activities and workshops.',
+    description: 'Family Get Together 2024',
   },
   {
     id: 2,
     images: [
-      'https://picsum.photos/seed/picsum5/800/600',
-      'https://picsum.photos/seed/picsum6/800/600',
-      'https://picsum.photos/seed/picsum7/800/600',
-      'https://picsum.photos/seed/picsum8/800/600',
+      { src: getAssetPath('Event Pics/Family Get Together 2025/IMG_2001.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Get Together 2025/IMG_2027.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Get Together 2025/IMG_2064.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Get Together 2025/IMG_2102.jpg'), positionClass: '' },
     ],
-    description: 'Celebrating festivals and cultural events.',
+    description: 'Family Get Together 2025',
   },
   {
     id: 3,
     images: [
-      'https://picsum.photos/seed/picsum9/800/600',
-      'https://picsum.photos/seed/picsum10/800/600',
-      'https://picsum.photos/seed/picsum11/800/600',
-      'https://picsum.photos/seed/picsum12/800/600',
+      { src: getAssetPath('Event Pics/Family Picnic 2025/IMG_0097.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Picnic 2025/IMG_0104.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Picnic 2025/IMG_0114.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Picnic 2025/IMG_0121.jpg'), positionClass: '' },
     ],
-    description: 'Annual offsite and team outings.',
+    description: 'Family Picnic 2025',
   },
   {
     id: 4,
     images: [
-      'https://picsum.photos/seed/picsum13/800/600',
-      'https://picsum.photos/seed/picsum14/800/600',
-      'https://picsum.photos/seed/picsum15/800/600',
-      'https://picsum.photos/seed/picsum16/800/600',
+      { src: getAssetPath('Event Pics/Internship Program 2026/3bb7def5-ebb8-4a11-87fd-6ea685d606eb.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Internship Program 2026/7d032269-1bab-4ba0-834a-23016126ee24.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Internship Program 2026/IMG_3686.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Internship Program 2026/IMG_3693.jpg'), positionClass: '' },
     ],
-    description: 'Knowledge sharing and learning sessions.',
+    description: 'Internship Program 2026',
   },
   {
     id: 5,
     images: [
-      'https://picsum.photos/seed/picsum17/800/600',
-      'https://picsum.photos/seed/picsum18/800/600',
-      'https://picsum.photos/seed/picsum19/800/600',
-      'https://picsum.photos/seed/picsum20/800/600',
+      { src: getAssetPath('Event Pics/IZZIBS at Expo/IMG-20241120-WA0017.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/IZZIBS at Expo/IMG20240430090033.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/IZZIBS at Expo/IMG20241105170211_01.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/IZZIBS at Expo/IMG20241211101524.jpg'), positionClass: '' },
     ],
-    description: 'Recreational activities and sports.',
+    description: 'IZZIBS at Expo',
   },
   {
     id: 6,
     images: [
-      'https://picsum.photos/seed/picsum21/800/600',
-      'https://picsum.photos/seed/picsum22/800/600',
-      'https://picsum.photos/seed/picsum23/800/600',
-      'https://picsum.photos/seed/picsum24/800/600',
+      { src: getAssetPath('Event Pics/Team Recognision/IMG_2160.jpg'), positionClass: 'move-down' },
+      { src: getAssetPath('Event Pics/Team Recognision/WhatsApp Image 2026-02-23 at 7.30.47 AM.jpeg'), positionClass: 'move-down-less' },
+      { src: getAssetPath('Event Pics/Team Recognision/IMG-20241111-WA0004.jpg'), positionClass: 'move-down' },
+      { src: getAssetPath('Event Pics/Team Recognision/Picsart_24-02-18_16-51-49-292.jpg'), positionClass: 'move-down' },
     ],
-    description: 'Celebrating milestones and achievements.',
+    description: 'Team Recognition',
   },
 ];
 
@@ -105,7 +105,7 @@ const About = () => {
         <div className="team-header-content">
           <h2 className="section-title">Team IZZIBS</h2>
           <p className="team-description">
-            Our strength lies in our people. The IZZIBS team is a synergy of seasoned experts and vibrant young talent, all united by a passion for excellence and a commitment to driving success for our clients. We foster a culture of collaboration, innovation, and continuous learning to stay at the forefront of the industry.
+            Our strength lies in our people. The IZZIBS team is a synergy of seasoned experts and vibrant young talent, all united by a passion for excellence and a commitment to driving success for our clients.
           </p>
           <button onClick={scrollToLifeSection} className="life-at-izzibs-btn">
             Life at IZZIBS <FaArrowDown style={{ marginLeft: '8px' }} />
@@ -140,7 +140,11 @@ const About = () => {
               <Carousel showThumbs={false} autoPlay infiniteLoop>
                 {item.images.map((image, index) => (
                   <div key={index}>
-                    <img src={image} alt={`Slide ${index + 1}`} />
+                    <img
+                      src={image.src}
+                      alt={`Slide ${index + 1}`}
+                      className={image.positionClass}
+                    />
                   </div>
                 ))}
               </Carousel>
