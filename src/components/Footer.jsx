@@ -64,11 +64,11 @@ const Footer = () => {
           </div>
 
           <div className="footer-nav">
-            <Link to="/services">Services</Link> | 
-            <Link to="/domains">Domains</Link> | 
-            <Link to="/projects">Projects</Link> | 
-            <Link to="/contact">Contact Us</Link> | 
-            <Link to="/about">About Us</Link>
+            <Link to="/services">Services</Link>| 
+            <Link to="/domains">Domains</Link>| 
+            <Link to="/projects">Projects</Link>| 
+            <Link to="/about">About Us</Link>| 
+            <Link to="/contact">Contact Us</Link>    
           </div>
 
           {/* <p className="copyright">

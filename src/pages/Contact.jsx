@@ -1,62 +1,29 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
-  // 1. State for form data
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
+  const form = useRef();
+  const [status, setStatus] = useState(''); // "", "sending", "success", "error"
 
-  // 2. State for submission status
-  const [status, setStatus] = useState(""); // "", "submitting", "success", "error"
-
-  // Handle Input Change
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  // Handle Form Submit
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    setStatus("submitting");
+    setStatus('sending');
 
-    // 3. Prepare data for Web3Forms
-    // REPLACE 'YOUR_ACCESS_KEY_HERE' with the key sent to sales@izzibs.com
-    const object = {
-      ...formData,
-      access_key: "9d619e4f-1796-4f0a-bd0f-230addcc9227" 
-    };
-    const json = JSON.stringify(object);
-
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: json
-      });
-      const result = await res.json();
-
-      if (result.success) {
-        setStatus("success");
-        setFormData({ name: "", email: "", subject: "", message: "" }); // Clear form
-      } else {
-        setStatus("error");
-      }
-    } catch (error) {
-      console.error("Error submitting form", error);
-      setStatus("error");
-    }
+    // Replace with your EmailJS Service ID, Template ID, and Public Key
+    emailjs.sendForm('service_ph9fsda', 'template_h59co6m', form.current, '6X4f79DEOA05GGsfJ')
+      .then((result) => {
+        console.log("SUCCESS!", result.text);
+        setStatus('success');
+        form.current.reset();
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => setStatus(''), 5000);
+    }, (error) => {
+        console.log("FAILED...", error.text);
+        setStatus('error');
+    });
   };
 
   return (
@@ -120,7 +87,7 @@ const Contact = () => {
         
         {/* RIGHT COLUMN: Form */}
         <div className="contact-form-wrapper slide-up" style={{animationDelay: '0.2s'}}>
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form ref={form} className="contact-form" onSubmit={sendEmail}>
             <h2>Send a Message</h2>
             
             <div className="form-group">
@@ -128,8 +95,6 @@ const Contact = () => {
               <input 
                 type="text" 
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
                 placeholder="John Doe" 
                 required 
               />
@@ -140,8 +105,6 @@ const Contact = () => {
               <input 
                 type="email" 
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
                 placeholder="john@example.com" 
                 required 
               />
@@ -152,8 +115,6 @@ const Contact = () => {
               <input 
                 type="text" 
                 name="subject"
-                value={formData.subject}
-                onChange={handleChange}
                 placeholder="Project Inquiry" 
                 required
               />
@@ -163,16 +124,14 @@ const Contact = () => {
               <label>Message</label>
               <textarea 
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
                 placeholder="Tell us about your project..." 
                 rows="5" 
                 required
               ></textarea>
             </div>
 
-            <button type="submit" disabled={status === "submitting"}>
-              {status === "submitting" ? "Sending..." : "Send Message"}
+            <button type="submit" disabled={status === "sending"}>
+              {status === "sending" ? "Sending..." : "Send Message"}
             </button>
 
             {/* Status Messages */}
