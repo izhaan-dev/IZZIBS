@@ -12,7 +12,7 @@ const Contact = () => {
     setStatus('sending');
 
     // Replace with your EmailJS Service ID, Template ID, and Public Key
-    emailjs.sendForm('service_ph9fsda', 'template_h59co6m', form.current, '6X4f79DEOA05GGsfJ')
+    emailjs.sendForm('service_veltmtg', 'template_h59co6m', form.current, '6X4f79DEOA05GGsfJ')
       .then((result) => {
         console.log("SUCCESS!", result.text);
         setStatus('success');
