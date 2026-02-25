@@ -172,6 +172,9 @@
   
   /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 768px) {
+  .team-member-image-wrapper img {
+    object-position: center top;
+  }
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
