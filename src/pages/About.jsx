@@ -11,7 +11,7 @@ const getAssetPath = (path) => {
 };
 
 const employees = [
-  { id: 1, name: 'Anwar Tatariya', position: 'Managing Partner', imageUrl: getAssetPath('Team Pics/Anwar PP.jpeg') },
+  { id: 1, name: 'Anwar Tatariya', position: 'Managing Partner', imageUrl: getAssetPath('Team Pics/Anwar PP.png') },
   { id: 2, name: 'Gazala Tatariya', position: 'Partner', imageUrl: getAssetPath('Team Pics/Gazala Hijab.jpg') },
   { id: 3, name: 'Vishal Bhalala', position: 'Technical Lead', imageUrl: getAssetPath('Team Pics/Vishal.png') },
   { id: 4, name: 'Kishan Shukla', position: 'Team Lead', imageUrl: getAssetPath('Team Pics/Kishan.jpg') },
