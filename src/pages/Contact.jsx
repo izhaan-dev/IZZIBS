@@ -47,11 +47,12 @@ const Contact = () => {
               <div className="icon-box"><FaMapMarkerAlt /></div>
               <div className="detail-text">
                 <h3>Visit Us</h3>
-                <p>
+                <p><a href="https://maps.app.goo.gl/33be2iE8M6KuatCL7">
                   4ᵗʰ Floor, Royal Orchid, <br/>
                   12/4 Patel Colony,
                   Gandhinagar Road, <br/>
                   Jamnagar, Gujarat 361008
+                </a>
                 </p>
               </div>
             </div>
