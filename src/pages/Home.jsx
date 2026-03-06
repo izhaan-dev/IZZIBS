@@ -213,8 +213,8 @@ const Home = () => {
             </p>
             {/* FIXED DOWNLOAD BUTTON */}
             <a 
-              href={getAssetPath("izzibs_company_profile.pdf")} 
-              download="izzibs_company_profile.pdf"
+              href={getAssetPath("IZZIBS Company Profile - Mar 2026.pdf")} 
+              download="IZZIBS Company Profile.pdf"
               className="download-btn"
             >
               Download Company Profile <FaDownload style={{marginLeft: '10px'}}/>
