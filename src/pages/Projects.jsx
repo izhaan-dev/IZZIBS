@@ -32,7 +32,7 @@ const projectsData = {
   ],
   Scheduling: [
     { year: "2025-26", client: "SATORP", location: "Saudi Arabia", tech: "AspenTech", logo: "/logos/satorp.png", description: "Developed deeply integrated Petrochemical (APS) and Polymer (PS) scheduling models for the AMIRAL complex." },
-    { year: "2025-26", client: "Shell Pearl GTL", location: "Qatar", tech: "AspenTech", logo: "/logos/shell.png", description: "Converted a Gas-to-Liquids (GTL) scheduling model from APS to Aspen Unified Scheduling with custom JavaScript logic." },
+    { year: "2025-26", client: "Shell Refinery", location: "Asia", tech: "AspenTech", logo: "/logos/shell.png", description: "Converted a scheduling model from APS to Aspen Unified Scheduling with custom JavaScript logic." },
     { year: "2024-25", client: "Shell Energy", location: "Rheinland", tech: "AspenTech", logo: "/logos/shell.png", description: "Modified existing APS models to handle decommissioned units and major turnaround inter-site transfers." },
     { year: "2022-23", client: "MPC", location: "US", tech: "AspenTech", logo: "/logos/mpc.png", description: "Developed and deployed 5 APS scheduling models with bulk event automation across 19 crude network desks." },
     { year: "2022-23", client: "Dangote", location: "Nigeria", tech: "MS Excel", logo: "/logos/dangote.png", description: "Built a custom Excel-based refinery-wide scheduling and single/multi-grade gasoline blend optimization model." },

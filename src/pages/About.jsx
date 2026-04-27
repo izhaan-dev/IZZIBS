@@ -16,14 +16,12 @@ const employees = [
   { id: 3, name: 'Vishal Bhalala', position: 'Technical Lead', imageUrl: getAssetPath('Team Pics/Vishal.png') },
   { id: 4, name: 'Kishan Shukla', position: 'Team Lead', imageUrl: getAssetPath('Team Pics/Kishan.jpg') },
   { id: 5, name: 'John Abraham', position: 'Senior Consultant', imageUrl: getAssetPath('Team Pics/John.jpg') },
-  { id: 6, name: 'Tarang Thakar', position: 'Senior Consultant', imageUrl: getAssetPath('Team Pics/Tarang.jpg') },
   { id: 7, name: 'Nikunj Nakum', position: 'Consultant', imageUrl: getAssetPath('Team Pics/Nikunj.jpg') },
   { id: 8, name: 'Shrey Choksi', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Shrey.jpg') },
   { id: 9, name: 'Manav Joisar', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Maanav.jpg') },
   { id: 10, name: 'Isha Jasani', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Isha.jpg') },
-  { id: 11, name: 'Neelam Mahto', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Neelam.jpg') },
   { id: 12, name: 'Sohil Jethava', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Sohil J.jpg') },
-  { id: 13, name: 'Sugat tembhurne', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Sugat.jpeg') },
+  { id: 13, name: 'Sugat Tembhurne', position: 'Analyst', imageUrl: getAssetPath('Team Pics/Sugat.jpeg') },
 ];
 
 const lifeAtIzzibsData = [
