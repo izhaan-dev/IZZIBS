@@ -45,9 +45,9 @@ const projectsData = {
     { year: "2016-18", client: "ADNOC", location: "UAE", tech: "AspenTech", logo: "/logos/adnoc.png", description: "Provided Project Management Consulting (PMC) services for a Refinery Information System integrating planning, scheduling, pricing, and performance management." },
     { year: "2017", client: "Petro Rabigh", location: "KSA", tech: "AspenTech", logo: "/logos/petrorabigh.png", description: "Developed an Aspen Petroleum Scheduler (APS) model incorporating refinery and petrochemical unit SMCs and custom reporting." },
   ],
-  MIS: [
-    { year: "2026", client: "Petro Rabigh", location: "KSA", tech: "Belsim Vali", logo: "/logos/petrorabigh.png", description: "Day to day Production Accounting Model run support" },
-  ],
+  // MIS: [
+  //   { year: "2026", client: "Petro Rabigh", location: "KSA", tech: "Belsim Vali", logo: "/logos/petrorabigh.png", description: "Day to day Production Accounting Model run support" },
+  // ],
   Digitalization: [
     { year: "2018-19", client: "Nayara Energy", location: "India", tech: "Digital Transformation", logo: "/logos/nayara.png", description: "Implemented Jaajitech's inSis Suite for refinery-wide digitalization, automating over 35 reports and tracking 200+ KPIs via real-time dashboards." },
   ],
