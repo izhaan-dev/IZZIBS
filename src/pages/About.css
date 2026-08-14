@@ -169,7 +169,7 @@
   .carousel .slide img.move-down-less {
     object-position: 0 0%;
   }
-  
+
   /* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 768px) {
   .team-member-image-wrapper {

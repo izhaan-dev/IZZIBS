@@ -27,6 +27,16 @@ const lifeAtIzzibsData = [
   {
     id: 1,
     images: [
+      { src: getAssetPath('Event Pics/Family Get Together 2026/IMG20260620210039.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Get Together 2026/IMG20260620213455.jpg'), positionClass: '' },
+      { src: getAssetPath('Event Pics/Family Get Together 2026/IMG_2009.jpg'), positionClass: 'move-down' },
+      { src: getAssetPath('Event Pics/Family Get Together 2026/IMG_2074.jpg'), positionClass: '' },
+    ],
+    description: 'Family Get Together 2026',
+  },
+  {
+    id: 2,
+    images: [
       { src: getAssetPath('Event Pics/Internship Program 2026/3bb7def5-ebb8-4a11-87fd-6ea685d606eb.jpg'), positionClass: '' },
       { src: getAssetPath('Event Pics/Internship Program 2026/7d032269-1bab-4ba0-834a-23016126ee24.jpg'), positionClass: '' },
       { src: getAssetPath('Event Pics/Internship Program 2026/IMG_3686.jpg'), positionClass: '' },
@@ -35,7 +45,7 @@ const lifeAtIzzibsData = [
     description: 'Internship Program 2026',
   },
   {
-    id: 2,
+    id: 3,
     images: [
       { src: getAssetPath('Event Pics/Family Get Together 2025/IMG_2001.jpg'), positionClass: '' },
       { src: getAssetPath('Event Pics/Family Get Together 2025/IMG_2027.jpg'), positionClass: '' },
@@ -45,7 +55,7 @@ const lifeAtIzzibsData = [
     description: 'Family Get Together 2025',
   },
   {
-    id: 3,
+    id: 4,
     images: [
       { src: getAssetPath('Event Pics/Family Picnic 2025/IMG_0097.jpg'), positionClass: '' },
       { src: getAssetPath('Event Pics/Family Picnic 2025/IMG_0104.jpg'), positionClass: '' },
@@ -55,7 +65,7 @@ const lifeAtIzzibsData = [
     description: 'Family Picnic 2025',
   },
   {
-    id: 4,
+    id: 5,
      images: [
       { src: getAssetPath('Event Pics/Family Get Together 2024/IMG20240217181432.jpg'), positionClass: '' },
       { src: getAssetPath('Event Pics/Family Get Together 2024/Picsart_24-02-18_13-21-12-582.jpg'), positionClass: '' },
@@ -66,7 +76,7 @@ const lifeAtIzzibsData = [
     
   },
   {
-    id: 5,
+    id: 6,
     images: [
       { src: getAssetPath('Event Pics/IZZIBS at Expo/IMG-20241120-WA0017.jpg'), positionClass: '' },
       { src: getAssetPath('Event Pics/IZZIBS at Expo/IMG20240430090033.jpg'), positionClass: '' },
@@ -76,7 +86,7 @@ const lifeAtIzzibsData = [
     description: 'IZZIBS at Expo',
   },
   {
-    id: 6,
+    id: 7,
     images: [
       { src: getAssetPath('Event Pics/Team Recognision/IMG_2160.jpg'), positionClass: 'move-down' },
       { src: getAssetPath('Event Pics/Team Recognision/WhatsApp Image 2026-02-23 at 7.30.47 AM.jpeg'), positionClass: 'move-down-less' },
